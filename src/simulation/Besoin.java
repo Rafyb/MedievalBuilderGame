@@ -11,6 +11,7 @@ public class Besoin {
 
 	
 	public static void actualiser (Parcelle monde[][]) {
+	    	Partie.maxPop=0;
 		//lire les production
 		for (int i = 0 ; i<monde.length ; i++) {
 			for (int j = 0 ; j<monde[i].length ; j++) {
@@ -23,7 +24,7 @@ public class Besoin {
 					}
 					
 					if (monde[i][j].getIcon().equals("H")) {
-						Partie.population += monde[i][j].getPlaceMax();						
+						Partie.maxPop += monde[i][j].getPlaceMax();						
 					}
 					if (monde[i][j].getIcon().equals("T")) {
 						Partie.happyness += monde[i][j].getPlaceMax();						
