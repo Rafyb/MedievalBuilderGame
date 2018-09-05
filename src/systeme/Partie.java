@@ -28,15 +28,6 @@ public class Partie {
     public static Tour date= new Tour(1,1,0);
     
     public static Plateau monde;
-  
-    /**
-     * Change the amount of money you have (-10 or +10 for example)
-     * @param m the amount of money
-     * */
-    public static void changeMoney (int m) {
-	money=money+m;
-	
-    }
     
     /**
      * Go to the next turn changing the date
@@ -51,12 +42,19 @@ public class Partie {
     
     public static void main (String[]args) {
 	monde=new Plateau();
-	monde.placer_batiment(5, 5, new Champ());
 	monde.afficherPlateau();
-	nextTurn(0,0,1,monde);
 	//System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
-	//System.out.println(monde.plateau[5][5].getClass().getName());
+	//monde.placer_batiment(5, 5, new Champ());
+	//monde.afficherPlateau();
+	//nextTurn(0,0,1,monde);
+	//System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
     }
+    
+    public static void ShowBasicInfo() {
+	System.out.println("money:"+money+" food:"+food+" population:"+population+" happyness:"+happyness);
+    }
+    
+    
 
 
 }
