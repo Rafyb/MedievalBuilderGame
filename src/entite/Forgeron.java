@@ -6,6 +6,7 @@ public class Forgeron extends Parcelle {
 	public Forgeron() {
 		cout = coutPlace;
 		coutPlace += 300;
+		coutSuppr = 100;
 		construit = true;
 		icon = "F";
 	}

@@ -48,9 +48,12 @@ public class Plateau {
 	}
 
 	public void placer_batiment(int x, int y, Parcelle batiment) {
-		if(!plateau[x][y].estConstruit()) {
-			plateau[x][y] = batiment;
-		}
+		if(!plateau[x][y].estConstruit() && !plateau[x][y].getIcon().equals("^") && batiment.getIcon().equals("M")) plateau[x][y] = batiment;
+		else if (!plateau[x][y].estConstruit() && plateau[x][y].getIcon().equals("^") && batiment.getIcon().equals("M")) plateau[x][y] = batiment;
+	}
+	
+	public void supprimer_batiment(int x, int y) {
+		if (plateau[x][y].estConstruit()) plateau[x][y] = new Parcelle();
 	}
 
 	public void afficherPlateau() {
