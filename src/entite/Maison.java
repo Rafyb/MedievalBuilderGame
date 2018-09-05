@@ -10,4 +10,8 @@ public class Maison extends Parcelle {
 		coutPlace = coutPlace + 20;
 		construit = true;
 	}
+	
+	public String getIcon() {
+		return "H";
+	}
 }
