@@ -55,6 +55,4 @@ public class Parcelle {
 	public String getIcon() {
 		return icon;
 	}
-	
-	
 }
