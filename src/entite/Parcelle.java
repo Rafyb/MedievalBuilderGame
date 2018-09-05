@@ -1,11 +1,12 @@
 package entite;
 
 public class Parcelle {
-	public int cout = 0;
-	public int production = 0;
-	public int placeMax = 0;
-	public int coutSuppr = 0;
-	public boolean construit = false;
+	protected int cout = 0;
+	protected int production = 0;
+	protected int placeMax = 0;
+	protected int coutSuppr = 0;
+	protected boolean construit = false;
+	protected String icon;
 	
 	public int recolte() {
 		return production;
@@ -52,8 +53,6 @@ public class Parcelle {
 	}
 	
 	public String getIcon() {
-		return " ";
+		return icon;
 	}
-	
-	
 }
