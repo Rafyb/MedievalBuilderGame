@@ -5,7 +5,7 @@ import entite.Parcelle;
 public class Plateau {
 	final private int longueur = 36;
 	final private int hauteur = 20;
-	final private char vide = '+';
+	final private char vide = '▫';
 	final public Parcelle [][] plateau = new Parcelle [longueur][hauteur];
 
 	public Plateau () {
@@ -26,7 +26,7 @@ public class Plateau {
 	public String toString() {
 		String affichage = "";
 
-		affichage +=" 0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z \n";
+		affichage +="   0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z \n";
 		for (int i = 0; i < hauteur ; i++) {
 			if(i>=10) {
 				affichage += i + " ";
