@@ -4,40 +4,29 @@ public class Partie {
     /**
      * Current amount of money you have
      * */
-    int money;
+    static int money=1000;
     /**
      * Current amount of food you have
      * */
-    int food;
+    static int food=100;
     /**
      * Current amount of people you have in your city
      * */
-    int population;
+    static int population=10;
     /**
      * Current happyness of your people
      * */
-    int happyness;
+    static int happyness=50;
     /**
      * Current date
      * */
-    Tour date;
-    
-    /**
-     * Constructor of a game
-     * */
-    public Partie() {
-	money = 1000;
-	food = 100;
-	population = 10;
-	happyness = 50;
-	date = new Tour(1,1,0);
-    }
+    static Tour date= new Tour(1,1,0);
   
     /**
      * Change the amount of money you have (-10 or +10 for example)
      * @param m the amount of money
      * */
-    public void changeMoney (int m) {
+    public static void changeMoney (int m) {
 	money=money+m;
     }
     
@@ -47,48 +36,29 @@ public class Partie {
      * @param m the number of month to pass
      * @param a the number of years to pass
      * */
-    public void nextTurn (int j,int m,int a) {
+    public static void nextTurn (int j,int m,int a) {
 	date.suivant(j, m, a);
 	food = food-population*3;
     }
     
-    public int getMoney() {
+    public static int getMoney() {
 	return money;
     }
 
-    public int getFood() {
+    public static int getFood() {
         return food;
     }
 
-    public void setFood(int food) {
-        this.food = food;
-    }
-
-    public int getPopulation() {
+    public static int getPopulation() {
         return population;
     }
 
-    public void setPopulation(int population) {
-        this.population = population;
-    }
-
-    public int getHappyness() {
+    public static int getHappyness() {
         return happyness;
     }
 
-    public void setHappyness(int happyness) {
-        this.happyness = happyness;
-    }
-
-    public Tour getDate() {
+    public static Tour getDate() {
         return date;
     }
 
-    public void setDate(Tour date) {
-        this.date = date;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
-    }
 }
