@@ -1,14 +1,14 @@
 package entite;
 
 public class Taverne extends Parcelle {
-	private int coutPlacer = 500;
+	private static int coutPlacer = 500;
 	private final int coutSuppr = 100;
-	private final int placeMax = 5;
-	private final int production = 10;
+	private final int placeMax = 0;
+	private final int production = 15;
 	
 	public Taverne() {
-		coutPlacer += 50;
-		construit = false;
+		coutPlacer += 200;
+		construit = true;
 	}
 
 	public int getCoutPlacer() {
@@ -31,7 +31,7 @@ public class Taverne extends Parcelle {
 		return construit;
 	}
 	
-	public char getChar() {
-		return 'T';
+	public String getIcon() {
+		return "T";
 	}
 }

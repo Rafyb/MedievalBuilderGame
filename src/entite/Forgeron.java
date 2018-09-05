@@ -1,14 +1,14 @@
 package entite;
 
 public class Forgeron extends Parcelle {
-	private int coutPlacer = 500;
+	private static int coutPlacer = 500;
 	private final int coutSuppr = 100;
-	private final int placeMax = 5;
+	private final int placeMax = 0;
 	private final int production = 0;
 	
 	public Forgeron() {
 		coutPlacer += 50;
-		construit = false;
+		construit = true;
 	}
 	
 	public void Forger() {
@@ -35,8 +35,7 @@ public class Forgeron extends Parcelle {
 		return construit;
 	}
 	
-	public char getChar() {
-		return 'F';
-		
+	public String getIcon() {
+		return "F";
 	}
 }
