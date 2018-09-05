@@ -2,10 +2,16 @@ package systeme;
 
 import entite.Champ;
 import entite.Maison;
+import entite.Mine;
 import monde.Plateau;
 import simulation.Besoin;
 
 public class Partie {
+    
+    /**
+     * the Max population of your city
+     * */
+    public static int maxPop=0;
     /**
      * Current amount of money you have
      * */
@@ -42,12 +48,27 @@ public class Partie {
     
     public static void main (String[]args) {
 	monde=new Plateau();
-	monde.afficherPlateau();
-	//System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
-	//monde.placer_batiment(5, 5, new Champ());
 	//monde.afficherPlateau();
-	//nextTurn(0,0,1,monde);
 	//System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
+	monde.placer_batiment(5, 5, new Champ());
+	monde.placer_batiment(5, 6, new Maison());
+	monde.placer_batiment(5, 7, new Maison());
+	monde.placer_batiment(5, 8, new Maison());
+	monde.placer_batiment(5, 9, new Maison());
+	monde.placer_batiment(5, 10, new Mine());
+	monde.afficherPlateau();
+	nextTurn(0,0,1,monde);
+	System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
+	nextTurn(0,0,1,monde);
+	System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
+	nextTurn(0,0,1,monde);
+	System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
+	nextTurn(0,0,1,monde);
+	System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
+	nextTurn(0,0,1,monde);
+	System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
+	nextTurn(0,0,1,monde);
+	System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
     }
     
     public static void ShowBasicInfo() {

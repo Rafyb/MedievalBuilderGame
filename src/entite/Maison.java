@@ -6,6 +6,7 @@ public class Maison extends Parcelle {
 	
 	public Maison () {
 		placeMax = 10;
+		cout = coutPlace;
 		coutPlace += 20;
 		coutSuppr = 50;
 		construit = true;
