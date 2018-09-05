@@ -5,6 +5,12 @@ package systeme;
         int mois;
         int annee;
         
+        /**
+         * Constructor of the date system
+         * @param j days
+         * @param m month
+         * @param a year
+         * */
         public Tour(int j,int m,int a) {
     	if(j>0 && j<=28 && m>0 && m<=12 && a>=0) {
     	    jour = j;
@@ -13,6 +19,12 @@ package systeme;
     	}
         }
     	
+        /**
+    	 * Passing days, month and year to the next one
+    	 * @param j days
+    	 * @param m month
+    	 * @param a year
+    	 * */
     	public void suivant (int j,int m,int a) {
     	    jour=jour+j;
     	    if(jour>28) {
@@ -26,13 +38,20 @@ package systeme;
     	    }
     	    annee=annee+a;
     	}
-    	
+    	/**
+    	 * @return the current day
+    	 * */
     	public int getJour() {
     	    return jour;
     	}
+    	/**
+    	 * @return the current month
+    	 * */
     	public int getMois() {
     	    return mois;
-    	}
+    	}/**
+    	 * @return the current year
+    	 * */
     	public int getAnnee() {
     	    return annee;
     	}
