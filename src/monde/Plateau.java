@@ -22,7 +22,7 @@ public class Plateau {
 	public int getHauteur() {
 		return hauteur;
 	}
-	
+
 	public String toString() {
 		String affichage = "";
 
@@ -46,11 +46,13 @@ public class Plateau {
 
 		return affichage;
 	}
-	
+
 	public void placer_batiment(int x, int y, Parcelle batiment) {
-		plateau[x][y] = batiment;
+		if(!plateau[x][y].estConstruit()) {
+			plateau[x][y] = batiment;
+		}
 	}
-	
+
 	public void afficherPlateau() {
 		System.out.println(this.toString());
 	}
