@@ -52,27 +52,31 @@ public class Partie {
 	//System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
 	monde.placer_batiment(5, 5, new Champ());
 	monde.placer_batiment(5, 6, new Maison());
-	monde.placer_batiment(5, 7, new Maison());
-	monde.placer_batiment(5, 8, new Maison());
-	monde.placer_batiment(5, 9, new Maison());
+	//monde.placer_batiment(5, 7, new Maison());
+	//monde.placer_batiment(5, 8, new Maison());
+	//monde.placer_batiment(5, 9, new Maison());
 	monde.placer_batiment(5, 10, new Mine());
 	monde.afficherPlateau();
 	nextTurn(0,0,1,monde);
-	System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
+	ShowBasicInfo();
 	nextTurn(0,0,1,monde);
-	System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
+	ShowBasicInfo();
 	nextTurn(0,0,1,monde);
-	System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
+	ShowBasicInfo();
 	nextTurn(0,0,1,monde);
-	System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
+	ShowBasicInfo();
 	nextTurn(0,0,1,monde);
-	System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
+	ShowBasicInfo();
 	nextTurn(0,0,1,monde);
-	System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
+	ShowBasicInfo();
+	nextTurn(0,0,1,monde);
+	ShowBasicInfo();
+	nextTurn(0,0,1,monde);
+	ShowBasicInfo();
     }
     
     public static void ShowBasicInfo() {
-	System.out.println("money:"+money+" food:"+food+" population:"+population+" happyness:"+happyness);
+	System.out.println("money:"+money+" food:"+food+" population:"+population+"/"+maxPop+" happyness:"+happyness);
     }
     
     public static void reproduction() {

@@ -36,15 +36,19 @@ public class Besoin {
 		totalBesoinEnNourriture = Partie.population*besoinEnNourriture;
 		Partie.food -= totalBesoinEnNourriture;
 		
+		
+		Partie.reproduction();
+		satisfactionBonheur();
 	}
 	
 	private static double satisfactionNourriture () {
-		return Math.min( Partie.food / totalBesoinEnNourriture , 100);
+		return Partie.food / totalBesoinEnNourriture;
+		
 	}
 	
-	public static double satisfactionBonheur() {
-		return satisfactionNourriture();
-	
+	public static void satisfactionBonheur() {
+		if ( satisfactionNourriture()>1) Partie.happyness += 10;
+		Partie.happyness += Math.min( ( Partie.maxPop - Partie.population) / Partie.maxPop  ,  0 );
 		
 	}
 	
