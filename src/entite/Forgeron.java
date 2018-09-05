@@ -1,13 +1,12 @@
 package entite;
 
 public class Forgeron extends Parcelle {
-	private static int coutPlacer = 500;
-	private final int coutSuppr = 100;
+	private int coutPlacer = 800;
+	private final int coutSuppr = 300;
 	private final int placeMax = 0;
 	private final int production = 0;
 	
 	public Forgeron() {
-		coutPlacer += 50;
 		construit = true;
 	}
 	

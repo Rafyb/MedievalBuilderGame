@@ -51,4 +51,44 @@ public class Partie {
 	date.suivant(j, m, a);
 	food = food-population*3;
     }
+    
+    public int getMoney() {
+	return money;
+    }
+
+    public int getFood() {
+        return food;
+    }
+
+    public void setFood(int food) {
+        this.food = food;
+    }
+
+    public int getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(int population) {
+        this.population = population;
+    }
+
+    public int getHappyness() {
+        return happyness;
+    }
+
+    public void setHappyness(int happyness) {
+        this.happyness = happyness;
+    }
+
+    public Tour getDate() {
+        return date;
+    }
+
+    public void setDate(Tour date) {
+        this.date = date;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
 }
