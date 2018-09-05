@@ -49,7 +49,7 @@ public class Plateau {
 	}
 
 	public void placer_batiment(int x, int y, Parcelle batiment) {
-		if(!plateau[x][y].estConstruit() && !plateau[x][y].getIcon().equals("^")) {
+		if(!plateau[x][y].estConstruit() && !(plateau[x][y].getIcon().equals("^"))) {
 			plateau[x][y] = batiment;
 			Partie.money =- batiment.getCoutPlace();
 		}

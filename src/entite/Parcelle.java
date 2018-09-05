@@ -6,7 +6,7 @@ public class Parcelle {
 	protected int placeMax = 0;
 	protected int coutSuppr = 0;
 	protected boolean construit = false;
-	protected String icon;
+	protected String icon= ".";
 	
 	public int recolte() {
 		return production;
