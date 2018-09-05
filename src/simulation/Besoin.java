@@ -48,7 +48,7 @@ public class Besoin {
 	
 	public static void satisfactionBonheur() {
 		if ( satisfactionNourriture()>1) Partie.happyness += 10;
-		Partie.happyness += Math.min( ( Partie.maxPop - Partie.population) / Partie.maxPop  ,  0 );
+		Partie.happyness -= Math.max( 0 , (Partie.population-Partie.maxPop));
 		
 	}
 	
