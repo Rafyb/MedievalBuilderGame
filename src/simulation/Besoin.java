@@ -15,7 +15,7 @@ public class Besoin {
 		//lire les production
 		for (int i = 0 ; i<monde.length ; i++) {
 			for (int j = 0 ; j<monde[i].length ; j++) {
-				if (monde[i][j]!=null) {
+				if (monde[i][j].getIcon()!=null) {
 					if (monde[i][j].getIcon().equals("M")) {
 						Partie.money += monde[i][j].getProduction();						
 					}

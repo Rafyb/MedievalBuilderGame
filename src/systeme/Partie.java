@@ -75,6 +75,10 @@ public class Partie {
 	System.out.println("money:"+money+" food:"+food+" population:"+population+" happyness:"+happyness);
     }
     
+    public static void reproduction() {
+    	population*=1.2;
+    }
+    
     
 
 
