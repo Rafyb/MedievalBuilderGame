@@ -10,5 +10,9 @@ public class Mine extends Parcelle {
 		coutPlace = coutPlace + 10;
 		construit = true;
 	}
+	
+	public String getIcon() {
+		return "M";
+	}
 
 }
