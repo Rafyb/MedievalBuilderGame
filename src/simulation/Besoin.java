@@ -20,8 +20,6 @@ public class Besoin {
 					}
 					if (monde[i][j].getIcon().equals("C")) {
 						Partie.food += monde[i][j].getProduction();
-						System.out.println("ici");
-						System.out.println(monde[i][j].getProduction());
 					}
 					
 					if (monde[i][j].getIcon().equals("H")) {

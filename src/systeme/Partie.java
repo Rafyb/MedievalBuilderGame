@@ -54,8 +54,8 @@ public class Partie {
 	monde.placer_batiment(5, 5, new Champ());
 	monde.afficherPlateau();
 	nextTurn(0,0,1,monde);
-	System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
-	System.out.println(monde.plateau[5][5].getClass().getName());
+	//System.out.println("money:"+money+" food:"+food+" population:"+population+" happy:"+happyness);
+	//System.out.println(monde.plateau[5][5].getClass().getName());
     }
 
 

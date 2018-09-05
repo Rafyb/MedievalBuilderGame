@@ -1,7 +1,7 @@
 package entite;
 
 public class Parcelle {
-	public int coutPlace = 0;
+	public int cout = 0;
 	public int production = 0;
 	public int placeMax = 0;
 	public int coutSuppr = 0;
@@ -12,11 +12,11 @@ public class Parcelle {
 	}
 
 	public int getCoutPlace() {
-		return coutPlace;
+		return cout;
 	}
 
 	public void setCoutPlace(int coutPlace) {
-		this.coutPlace = coutPlace;
+		this.cout = coutPlace;
 	}
 
 	public int getProduction() {
