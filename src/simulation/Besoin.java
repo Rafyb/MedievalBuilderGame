@@ -1,6 +1,7 @@
 package simulation;
 
 import entite.Parcelle;
+import systeme.Partie;
 
 public class Besoin {
 	
@@ -33,10 +34,17 @@ public class Besoin {
 		//deduire les besoins
 		totalBesoinEnNourriture = population*besoinEnNourriture;
 		stockNourriture -= totalBesoinEnNourriture;
+		
 	}
 	
-	public static double satisfactionNourriture () {
+	private static double satisfactionNourriture () {
 		return Math.min( stockNourriture / totalBesoinEnNourriture , 100);
+	}
+	
+	public static double satisfactionBonheur() {
+		return satisfactionNourriture();
+	
+		
 	}
 	
 	
