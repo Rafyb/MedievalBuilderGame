@@ -4,23 +4,23 @@ public class Partie {
     /**
      * Current amount of money you have
      * */
-    static int money=1000;
+    public static int money=1000;
     /**
      * Current amount of food you have
      * */
-    static int food=100;
+    public static int food=100;
     /**
      * Current amount of people you have in your city
      * */
-    static int population=10;
+    public static int population=10;
     /**
      * Current happyness of your people
      * */
-    static int happyness=50;
+    public static int happyness=50;
     /**
      * Current date
      * */
-    static Tour date= new Tour(1,1,0);
+    public static Tour date= new Tour(1,1,0);
   
     /**
      * Change the amount of money you have (-10 or +10 for example)
@@ -40,25 +40,6 @@ public class Partie {
 	date.suivant(j, m, a);
 	food = food-population*3;
     }
-    
-    public static int getMoney() {
-	return money;
-    }
 
-    public static int getFood() {
-        return food;
-    }
-
-    public static int getPopulation() {
-        return population;
-    }
-
-    public static int getHappyness() {
-        return happyness;
-    }
-
-    public static Tour getDate() {
-        return date;
-    }
 
 }
