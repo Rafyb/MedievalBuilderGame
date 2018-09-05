@@ -15,5 +15,8 @@ public class Champ extends Parcelle {
 		return "C";
 	}
 
+	public int getProduction() {
+		return production;
+	}
 
 }

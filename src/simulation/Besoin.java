@@ -1,6 +1,6 @@
 package simulation;
 
-import entite.Parcelle;
+import entite.*;
 import systeme.Partie;
 
 public class Besoin {
@@ -15,14 +15,16 @@ public class Besoin {
 		for (int i = 0 ; i<monde.length ; i++) {
 			for (int j = 0 ; j<monde[i].length ; j++) {
 				if (monde[i][j]!=null) {
-					if (monde[i][j].getClass().getName()=="Mine") {
+					if (monde[i][j].getIcon().equals("M")) {
 						Partie.money += monde[i][j].getProduction();						
 					}
-					if (monde[i][j].getClass().getName()=="Champs") {
-						Partie.food += monde[i][j].getProduction();						
+					if (monde[i][j].getIcon().equals("C")) {
+						Partie.food += monde[i][j].getProduction();
+						System.out.println("ici");
+						System.out.println(monde[i][j].getProduction());
 					}
 					
-					if (monde[i][j].getClass().getName()=="Maison") {
+					if (monde[i][j].getIcon().equals("H")) {
 						Partie.population += monde[i][j].getPlaceMax();						
 					}					
 				}
