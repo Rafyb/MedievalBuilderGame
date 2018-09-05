@@ -1,7 +1,6 @@
 package entite;
 
-public class Montagne {
-	String icon = "";
+public class Montagne extends Parcelle {
 	
 	public Montagne() {
 		icon = "^";
