@@ -1,6 +1,7 @@
 package monde;
 
 import entite.Parcelle;
+import systeme.Partie;
 
 public class Plateau {
 	final private int longueur = 36;
@@ -48,8 +49,15 @@ public class Plateau {
 	}
 
 	public void placer_batiment(int x, int y, Parcelle batiment) {
-		if(!plateau[x][y].estConstruit() && !plateau[x][y].getIcon().equals("^") && batiment.getIcon().equals("M")) plateau[x][y] = batiment;
-		else if (!plateau[x][y].estConstruit() && plateau[x][y].getIcon().equals("^") && batiment.getIcon().equals("M")) plateau[x][y] = batiment;
+		if(!plateau[x][y].estConstruit() && !plateau[x][y].getIcon().equals("^")) {
+			plateau[x][y] = batiment;
+			Partie.money =- batiment.getCoutPlace();
+		}
+		else if (!plateau[x][y].estConstruit() && plateau[x][y].getIcon().equals("^") && batiment.getIcon().equals("M")) {
+			plateau[x][y] = batiment;
+			batiment.setProduction(batiment.getProduction() + 50);
+			Partie.money =- batiment.getCoutPlace();
+		}
 	}
 	
 	public void supprimer_batiment(int x, int y) {

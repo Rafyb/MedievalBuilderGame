@@ -12,6 +12,5 @@ public class Forgeron extends Parcelle {
 	}
 	
 	public void Forger() {
-		
 	}
 }
