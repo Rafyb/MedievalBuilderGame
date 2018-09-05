@@ -32,6 +32,15 @@ public class Partie {
 	happyness = 50;
 	date = new Tour(1,1,0);
     }
+  
+    /**
+     * Change the amount of money you have (-10 or +10 for example)
+     * @param m the amount of money
+     * */
+    public void changeMoney (int m) {
+	money=money+m;
+    }
+    
     /**
      * Go to the next turn changing the date
      * @param j the number of day to pass
@@ -40,12 +49,6 @@ public class Partie {
      * */
     public void nextTurn (int j,int m,int a) {
 	date.suivant(j, m, a);
-    }
-    /**
-     * Change the amont of money you have (-10 or +10 for example)
-     * @param m the amount of money
-     * */
-    public void changeMoney (int m) {
-	money=money+m;
+	food = food-population*3;
     }
 }
