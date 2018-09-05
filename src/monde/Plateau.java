@@ -5,7 +5,7 @@ import entite.Parcelle;
 public class Plateau {
 	final private int longueur = 36;
 	final private int hauteur = 20;
-	final private char vide = '▫';
+	final private char vide = '.';
 	final public Parcelle [][] plateau = new Parcelle [longueur][hauteur];
 
 	public Plateau () {

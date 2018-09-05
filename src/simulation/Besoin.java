@@ -24,7 +24,10 @@ public class Besoin {
 					
 					if (monde[i][j].getIcon().equals("H")) {
 						Partie.population += monde[i][j].getPlaceMax();						
-					}					
+					}
+					if (monde[i][j].getIcon().equals("T")) {
+						Partie.happyness += monde[i][j].getPlaceMax();						
+					}
 				}
 			}
 		}
