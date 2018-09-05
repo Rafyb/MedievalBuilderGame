@@ -7,7 +7,8 @@ public class Mine extends Parcelle {
 	int coutSuppr = 30;
 	
 	public Mine () {
-		coutPlace = coutPlace + 20;
+		coutPlace = coutPlace + 10;
+		construit = true;
 	}
 
 }

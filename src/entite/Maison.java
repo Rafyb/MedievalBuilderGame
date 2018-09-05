@@ -7,6 +7,7 @@ public class Maison extends Parcelle {
 	int coutSuppr = 50;
 	
 	public Maison () {
-		coutPlace = coutPlace + 50;
+		coutPlace = coutPlace + 20;
+		construit = true;
 	}
 }
