@@ -1,17 +1,14 @@
 package entite;
 
 public class Maison extends Parcelle {
-	final int production =0;
-	final int placeMax = 10;
 	static int coutPlace = 300;
 	int coutSuppr = 50;
 	
 	public Maison () {
-		coutPlace = coutPlace + 20;
+		placeMax = 10;
+		coutPlace += 20;
+		coutSuppr = 50;
 		construit = true;
-	}
-	
-	public String getIcon() {
-		return "H";
+		icon = "H";
 	}
 }

@@ -1,18 +1,15 @@
 package entite;
 
 public class Mine extends Parcelle {
-	final int production =200;
-	final int placeMax = 3;
 	static int coutPlace = 200;
-	int coutSuppr = 30;
 	
 	public Mine () {
-		coutPlace = coutPlace + 10;
+		placeMax = 3;
+		production = 200;
+		cout = coutPlace;
+		coutPlace += 10;
+		coutSuppr = 30;
 		construit = true;
+		icon = "M";
 	}
-	
-	public String getIcon() {
-		return "M";
-	}
-
 }
