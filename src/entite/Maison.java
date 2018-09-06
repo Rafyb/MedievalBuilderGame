@@ -9,6 +9,6 @@ public class Maison extends Parcelle {
 		coutPlace += 20;
 		coutSuppr = 50;
 		construit = true;
-		icon = "H";
+		icon = "🏘";
 	}
 }
