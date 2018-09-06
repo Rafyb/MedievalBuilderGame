@@ -20,7 +20,7 @@ public class Partie {
 	/**
 	 * the Max population of your city
 	 * */
-	public static int maxPop=0;
+	public static int maxPop=5;
 	/**
 	 * Current amount of money you have
 	 * */
