@@ -3,6 +3,7 @@ package systeme;
 import entite.Champ;
 import entite.Maison;
 import entite.Mine;
+import entite.Parcelle;
 import monde.Plateau;
 import simulation.Besoin;
 import simulation.GestionBudget;
@@ -10,7 +11,7 @@ import simulation.rapport;
 import simulation.temp;
 
 public class Partie {
-	
+
 	public static String budget="Defaut";
 
 	/**
@@ -69,18 +70,27 @@ public class Partie {
 		boolean fin = false;
 		String choix = "";
 		while(!end) {
-		    for(int cpt=0;cpt<4;cpt++) {
-		    	do {
+			for(int cpt=0;cpt<4;cpt++) {
+				do {
 					fin = false;
 					choix = i.saisiePrincipal(monde);
 					if(choix.equals("1")){
-						i.construire(monde, i.saisieAchat(monde), i.getCoordo(monde), i.getCoordo(monde));
+						Parcelle par = i.saisieAchat(monde);
+						if (par.equals(new Mine())) {
+							par.setProduction(par.getProduction()+50);
+							i.construire(monde, par, i.getCoordo(monde,0), i.getCoordo(monde,42));
+						}else {
+							i.construire(monde, par , i.getCoordo(monde,0), i.getCoordo(monde,42));
+						}
 					}
 					if(choix.equals("2")){
-						i.detruire(monde,i.saisieSuppr(monde), i.getCoordo(monde), i.getCoordo(monde));
+						i.detruire(monde,i.saisieSuppr(monde),  i.getCoordo(monde,0), i.getCoordo(monde,42));
 					}
-					if(choix.equals("3")) {
-						
+					
+					
+					if(choix.equals("3") && Amelioration.active) {
+						i.afficaheAmélioration(monde);
+
 					}
 					if(choix.equals("4")){
 						fin = true;
@@ -88,16 +98,16 @@ public class Partie {
 
 
 				}while(!fin);
-			Partie.nextTurn(0, 3, 0, monde);
-		    }
-		    GestionBudget.Gestion(monde);
+				Partie.nextTurn(0, 3, 0, monde);
+			}
+			GestionBudget.Gestion(monde);
 		}
 		System.out.println("Fin de la partie, vous avez survécu jusqu'au "+date.getJour()+"/"+date.getMois()+"/"+date.getAnnee()+"\n");
 	}
 
 	public static void ShowBasicInfo() {
 		System.out.println("money:"+money+" food:"+food+" population:"+population+" happyness:"+happyness+" saison:"+temp.saison()+" annee:"+date.getAnnee());
-		
+
 		rapport.estimer(monde.getPlateau());
 		System.out.println("rapport de saison:  production nourriture:"+rapport.rapProdNourriture+" consomation nourriture:"+rapport.rapBesoinNourriture+" production Argent:"+rapport.rapProdArgent);
 	}
@@ -105,7 +115,7 @@ public class Partie {
 	public static void reproduction() {
 		population*=1.2;
 	}
-	
+
 	public static void finDePartie() {
 		if(population <= 0) end = true;
 		if(food <= 0) end = true;
