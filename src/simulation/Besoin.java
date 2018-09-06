@@ -57,7 +57,8 @@ public class Besoin {
 	}
 	
 	public static void satisfactionBonheur() {
-		if ( satisfactionNourriture()>1) Partie.happyness += 10;
+		if ( Partie.happyness<=90 && satisfactionNourriture()>1) Partie.happyness += 10;
+		if ( Partie.happyness>90 && Partie.happyness<100 && satisfactionNourriture()>1) Partie.happyness=100;
 		Partie.happyness -= Math.max( 0 , (Partie.population-Partie.maxPop));
 		
 	}
