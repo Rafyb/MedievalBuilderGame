@@ -23,6 +23,9 @@ public class Plateau {
 			}			
 		}
 		Obstacle.lac(plateau, 10, 10);
+		Obstacle.lac(plateau, 11, 10);
+		Obstacle.lac(plateau, 10, 11);
+		Obstacle.lac(plateau, 11, 11);
 		
 	}
 	
