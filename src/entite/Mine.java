@@ -10,6 +10,6 @@ public class Mine extends Parcelle {
 		coutPlace += 10;
 		coutSuppr = 30;
 		construit = true;
-		icon = "⩄";
+		icon = "Ʌ";
 	}
 }

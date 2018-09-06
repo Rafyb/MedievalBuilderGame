@@ -43,7 +43,7 @@ public class Interface {
 		afficherCarteBesoin(p);
 
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.println("||      Quelle type de batiment ajouter ?                      ||");
+		System.out.println("||      Quelle type de batiment ajouter ?   0 = Parcelle(0or)   ||");
 		System.out.println("||  1 = Maison ("+m.getCoutPlace()+" or)        4 = Route("+r.getCoutPlace()+" or)                 ||");
 		System.out.println("||  2 = Champ ("+c.getCoutPlace()+" or)       5 = Taverne("+t.getCoutPlace()+" or)                ||");
 		System.out.println("||  3 = Mine ("+mm.getCoutPlace()+" or)        6 = Forgeron("+f.getCoutPlace()+"or)                ||");
@@ -54,8 +54,8 @@ public class Interface {
 		afficherCarteBesoin(p);
 
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.println("||      Quelle type de batiment supprimer ?                     ||");
-		System.out.println("||  1 = Maison (100 or)         4 = Route (100 or)              ||");
+		System.out.println("||      Quelle type de batiment supprimer ?   0 = Parcelle(0or) ||");
+		System.out.println("||  1 = Maison (100 or)     4 = Route (100 or)                  ||");
 		System.out.println("||  2 = Champ (100 or)      5 = Taverne  (100 or)               ||");
 		System.out.println("||  3 = Mine (100 or)       6 = Forgeron  (100 or)		        ||");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -64,7 +64,7 @@ public class Interface {
 		afficherCarteBesoin(p);
 
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-		System.out.println("||      Quelle batiment améliorer ?                             ||");
+		System.out.println("||      Quelle batiment améliorer ?      0 = annuler      ||");
 		System.out.println("||      1 = Maison ("+ a.coutAmelioMaison+" or)                                     ||");
 		System.out.println("||      2 = Champ ("+ a.coutAmelioChamp+" or)                                      ||");
 		System.out.println("||      3 = Mine ("+ a.coutAmelioMine+" or)                                       ||");
@@ -99,7 +99,7 @@ public class Interface {
 		if(num==1) {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			System.out.println("||                                                              ||");
-			System.out.println("||      Coordonnées incorrectes :  Batiment déjà présent          ||");
+			System.out.println("||      Coordonnées incorrects : Placement invalide             ||");
 			System.out.println("||                                                              ||");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			Scanner sc = new Scanner(System.in);String str = " " + sc.nextLine();

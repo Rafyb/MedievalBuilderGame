@@ -31,7 +31,7 @@ public class Besoin {
 					if (monde[i][j].getIcon().equals("T")) { //Taverne
 						Partie.happyness += monde[i][j].getPlaceMax();						
 					}
-					if (monde[i][j].getIcon().equals("⚒")) { //Forgeron
+					if (monde[i][j].getIcon().equals("Ʌ")) { //Forgeron
 
 						Amelioration.active =true;	
 						sswitch = true;
