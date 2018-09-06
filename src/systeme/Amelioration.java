@@ -3,10 +3,11 @@ package systeme;
 import entite.Parcelle;
 
 public class Amelioration {
-	boolean active = false;
+	public static boolean active = false;
 	int coutAmelioMaison = 200;
 	int coutAmelioMine = 250;
 	int coutAmelioChamp = 150;
+
 	
 	public void amelioMaison(Parcelle monde[][]) {
 		Partie.money =- coutAmelioMaison;

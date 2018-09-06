@@ -93,6 +93,8 @@ public class Interface {
 			System.out.println("||      Coordonnées incorrect :  Batiment déjà présent          ||");
 			System.out.println("||                                                              ||");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			Scanner sc = new Scanner(System.in);String str = " " + sc.nextLine();
+
 		}
 		if(num==2) {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -100,6 +102,8 @@ public class Interface {
 			System.out.println("||      Coordonnées incorrect :  Coordonnées Incorrect          ||");
 			System.out.println("||                                                              ||");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			Scanner sc = new Scanner(System.in);String str = " " + sc.nextLine();
+
 		}
 		if(num==3) {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -107,6 +111,8 @@ public class Interface {
 			System.out.println("||      Pas assez d'argent !!!!!                                ||");
 			System.out.println("||                                                              ||");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			Scanner sc = new Scanner(System.in);String str = " " + sc.nextLine();
+
 		}
 		if(num==4) {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -114,6 +120,8 @@ public class Interface {
 			System.out.println("||      Aucun batiment à cette endroit                          ||");
 			System.out.println("||                                                              ||");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			Scanner sc = new Scanner(System.in);String str = " " + sc.nextLine();
+
 		}
 	}
 	public String saisiePrincipal (Plateau p) {
@@ -216,29 +224,6 @@ public class Interface {
 	}
 
 	public static void main (String[]args) {
-		Interface i = new Interface();
-		Partie pp = new Partie();
-		Plateau p = new Plateau();
-		boolean fin = false;
-		String choix = "";
 
-		do {
-			fin = false;
-			choix = i.saisiePrincipal(p);
-			if(choix.equals("1")){
-				i.construire(p, i.saisieAchat(p), i.getCoordo(p), i.getCoordo(p));
-			}
-			if(choix.equals("2")){
-				i.detruire(p,i.saisieSuppr(p), i.getCoordo(p), i.getCoordo(p));
-			}
-			if(choix.equals("3")) {
-				
-			}
-			if(choix.equals("3")){
-				fin = true;
-			}
-
-
-		}while(!fin);
 	}
 }
