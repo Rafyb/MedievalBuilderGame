@@ -12,7 +12,7 @@ public class Besoin {
 
 	
 	public static void actualiser (Parcelle monde[][]) {
-	    	Partie.maxPop=0;
+	    	Partie.maxPop=5;
 	    	boolean sswitch = false;
 		//lire les production
 		for (int i = 0 ; i<monde.length ; i++) {
