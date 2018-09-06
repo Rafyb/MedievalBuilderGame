@@ -52,6 +52,7 @@ public class Partie {
 	public static void nextTurn (int j,int m,int a,Plateau p) {
 		date.suivant(j, m, a);
 		Besoin.actualiser(monde.plateau);
+		finDePartie();
 	}
 
 	public static void main (String[]args) {
