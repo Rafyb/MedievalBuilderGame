@@ -1,16 +1,15 @@
 package entite;
 
+import systeme.Amelioration;
+
 public class Forgeron extends Parcelle {
-	static int coutPlace = 800;
+	
 	
 	public Forgeron() {
-		cout = coutPlace;
-		coutPlace += 300;
+		cout = 800;
 		coutSuppr = 100;
 		construit = true;
 		icon = "⚒";
 	}
 	
-	public void Forger() {
-	}
 }
