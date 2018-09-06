@@ -1,6 +1,7 @@
 package simulation;
 
 import entite.*;
+import systeme.Amelioration;
 import systeme.Partie;
 
 public class Besoin {
@@ -12,6 +13,7 @@ public class Besoin {
 	
 	public static void actualiser (Parcelle monde[][]) {
 	    	Partie.maxPop=0;
+	    	boolean sswitch = false;
 		//lire les production
 		for (int i = 0 ; i<monde.length ; i++) {
 			for (int j = 0 ; j<monde[i].length ; j++) {
@@ -28,6 +30,13 @@ public class Besoin {
 					}
 					if (monde[i][j].getIcon().equals("T")) { //Taverne
 						Partie.happyness += monde[i][j].getPlaceMax();						
+					}
+					if (monde[i][j].getIcon().equals("⚒")) { //Forgeron
+
+						Amelioration.active =true;	
+						sswitch = true;
+					} else if(!sswitch) {
+						Amelioration.active =false;
 					}
 				}
 			}

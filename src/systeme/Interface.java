@@ -66,7 +66,7 @@ public class Interface {
 	/**
 	 * Si le numéro en paramétre est 0 l'affichage sera pour la coordonné X sinon pour la Y 
 	 * 1 affiche un message d'erreur avec un batiment construit, 2 pour des coordonnèes invalide
-	 * 3 pas assez d'argent
+	 * 3 pas assez d'argent 4 Aucun batiment à ameliorer
 	 * @param num
 	 */
 	public void afficherDivers(Plateau p,int num) {
@@ -93,6 +93,8 @@ public class Interface {
 			System.out.println("||      Coordonnées incorrect :  Batiment déjà présent          ||");
 			System.out.println("||                                                              ||");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			Scanner sc = new Scanner(System.in);String str = " " + sc.nextLine();
+
 		}
 		if(num==2) {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -100,6 +102,8 @@ public class Interface {
 			System.out.println("||      Coordonnées incorrect :  Coordonnées Incorrect          ||");
 			System.out.println("||                                                              ||");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			Scanner sc = new Scanner(System.in);String str = " " + sc.nextLine();
+
 		}
 		if(num==3) {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -107,6 +111,8 @@ public class Interface {
 			System.out.println("||      Pas assez d'argent !!!!!                                ||");
 			System.out.println("||                                                              ||");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			Scanner sc = new Scanner(System.in);String str = " " + sc.nextLine();
+
 		}
 		if(num==4) {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -114,6 +120,8 @@ public class Interface {
 			System.out.println("||      Aucun batiment à cette endroit                          ||");
 			System.out.println("||                                                              ||");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			Scanner sc = new Scanner(System.in);String str = " " + sc.nextLine();
+
 		}
 	}
 	public String saisiePrincipal (Plateau p) {
@@ -172,15 +180,26 @@ public class Interface {
 		}
 		return new Parcelle();
 	}
-	public String saisieAmelio (Plateau p ) {
-		this.afficaheAmélioration(p);
+	public void saisieAmelio ( Plateau mondee,Parcelle [][] monde) {
+		this.afficaheAmélioration(mondee);
 		Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();
-		return str;
+		Parcelle pa;
+		if(str.equals("1")) {
+			a.amelioMaison(monde);
+		}
+		if(str.equals("2")) {
+			a.amelioChamp(monde);
+		}
+		if(str.equals("3")) {
+			a.amelioMine(monde);
+		}
+		
+
 	}
 
-	int getCoordo(Plateau p) {
-		this.afficherDivers(p,0);
+	int getCoordo(Plateau p,int i) {
+		this.afficherDivers(p,i);
 
 		Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();
@@ -191,7 +210,8 @@ public class Interface {
 
 		if( x > 35 || x < 0  || y < 0 || y > 19) {
 			afficherDivers(p, 2);
-		}else if(Plateau.plateau[x][y].estConstruit()) {
+			
+		}else if(Plateau.plateau[x][y].estConstruit() && !((Plateau.plateau[x][y].getIcon().equals("^") && pa.getIcon().equals("⩄")))) {
 			afficherDivers(p, 1);
 		}else if(Partie.money<pa.getCoutPlace()) {
 			afficherDivers(p, 3);
@@ -216,29 +236,6 @@ public class Interface {
 	}
 
 	public static void main (String[]args) {
-		Interface i = new Interface();
-		Partie pp = new Partie();
-		Plateau p = new Plateau();
-		boolean fin = false;
-		String choix = "";
 
-		do {
-			fin = false;
-			choix = i.saisiePrincipal(p);
-			if(choix.equals("1")){
-				i.construire(p, i.saisieAchat(p), i.getCoordo(p), i.getCoordo(p));
-			}
-			if(choix.equals("2")){
-				i.detruire(p,i.saisieSuppr(p), i.getCoordo(p), i.getCoordo(p));
-			}
-			if(choix.equals("3")) {
-				
-			}
-			if(choix.equals("3")){
-				fin = true;
-			}
-
-
-		}while(!fin);
 	}
 }
