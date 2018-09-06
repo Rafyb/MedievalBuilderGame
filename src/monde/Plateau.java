@@ -2,6 +2,7 @@ package monde;
 
 import java.util.Random;
 
+import entite.Montagne;
 import entite.Parcelle;
 import systeme.Partie;
 
@@ -14,7 +15,11 @@ public class Plateau {
 	public Plateau () {
 		for (int i = 0; i < longueur; i++) {
 			for (int j = 0; j < hauteur; j++) {
-				plateau[i][j] = new Parcelle();
+				if (randomMoutain()) {
+					plateau[i][j] = new Montagne();
+				} else {
+					plateau[i][j] = new Parcelle();
+				}
 			}
 		}
 	}
@@ -41,10 +46,7 @@ public class Plateau {
 				affichage += i + "  ";
 			}
 			for (int j = 0; j < longueur ; j++) {
-				if (randomMoutain()) {
-					affichage += "" + "^" + " ";
-				}
-				else if(plateau[j][i].estConstruit() && !plateau[i][j].getIcon().equals("^")) {
+				if(plateau[j][i].estConstruit() ) {
 					affichage += ""+plateau[j][i].getIcon() + " ";
 				}else {
 					affichage += vide + " ";
@@ -58,7 +60,7 @@ public class Plateau {
 	}
 
 	public static void placer_batiment(int x, int y, Parcelle batiment) {
-		if(!plateau[x][y].estConstruit() && !(plateau[x][y].getIcon().equals("^"))) {
+		if(!plateau[x][y].estConstruit()) {
 			plateau[x][y] = batiment;
 			Partie.money =- batiment.getCoutPlace();
 		}
