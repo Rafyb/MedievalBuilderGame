@@ -136,7 +136,7 @@ public class Partie {
 		}
 		if(food < 0) {
 			end = true;
-			messageFin=("Souffrant d'une inlassable faim, les villageois ont calmer celle-ci de petites roches extraites par les mineurs");
+			messageFin=("Souffrant d'une inlassable faim, les villageois ont calme celle-ci de petites roches extraites par les mineurs");
 		}
 		if(happyness <= 0) {
 			end = true;
