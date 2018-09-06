@@ -20,8 +20,11 @@ public class Plateau {
 				} else {
 					plateau[i][j] = new Parcelle();
 				}
-			}
+			}			
 		}
+		//todo
+		Obstacle.lac(plateau, 10, 10);
+		
 	}
 	
 	public static Parcelle [][] getPlateau(){
