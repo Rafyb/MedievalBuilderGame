@@ -27,7 +27,7 @@ public class Interface {
 		System.out.println("||                                                              ||");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	}
-	
+
 	public void affichagePrincipale(Plateau p){
 		afficherCarteBesoin(p);
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -133,13 +133,13 @@ public class Interface {
 
 		}
 	}
-	
+
 	public String saisieNom() {
 		this.affichageNommerVillage();
 		Scanner sc = new Scanner(System.in);
 		return sc.nextLine();
 	}
-	
+
 	public String saisiePrincipal (Plateau p) {
 		this.affichagePrincipale(p);
 		Scanner sc = new Scanner(System.in);
@@ -210,15 +210,17 @@ public class Interface {
 		if(str.equals("3")) {
 			a.amelioMine(monde);
 		}
-		
+
 
 	}
 
 	int getCoordo(Plateau p,int i) {
 		this.afficherDivers(p,i);
-
-		Scanner sc = new Scanner(System.in);
-		String str = sc.nextLine();
+		boolean boo = true;
+		String str = "";
+			Scanner sc = new Scanner(System.in);
+			str = "" + sc.nextInt();
+			
 		return Integer.valueOf(str);
 	}
 
@@ -226,7 +228,7 @@ public class Interface {
 
 		if( x > 35 || x < 0  || y < 0 || y > 19) {
 			afficherDivers(p, 2);
-			
+
 		}else if(Plateau.plateau[x][y].estConstruit() && !((Plateau.plateau[x][y].getIcon().equals("^") && pa.getIcon().equals("Π")))) {
 			afficherDivers(p, 1);
 		}else if(Partie.money<pa.getCoutPlace()) {
