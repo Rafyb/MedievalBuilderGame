@@ -84,14 +84,14 @@ public class Interface {
 		if(num==0) {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			System.out.println("||                                                              ||");
-			System.out.println("||      Saissisez la coordonné X :                              ||");
+			System.out.println("||      Saissisez la coordonnée X :                              ||");
 			System.out.println("||                                                              ||");
 			System.out.println("||                                                              ||");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		}else {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			System.out.println("||                                                              ||");
-			System.out.println("||      Saissisez la coordonné Y :                              ||");
+			System.out.println("||      Saissisez la coordonnée Y :                              ||");
 			System.out.println("||                                                              ||");
 			System.out.println("||                                                              ||");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -99,7 +99,7 @@ public class Interface {
 		if(num==1) {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			System.out.println("||                                                              ||");
-			System.out.println("||      Coordonnées incorrect :  Batiment déjà présent          ||");
+			System.out.println("||      Coordonnées incorrectes :  Batiment déjà présent          ||");
 			System.out.println("||                                                              ||");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			Scanner sc = new Scanner(System.in);String str = " " + sc.nextLine();
@@ -108,7 +108,7 @@ public class Interface {
 		if(num==2) {
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			System.out.println("||                                                              ||");
-			System.out.println("||      Coordonnées incorrect :  Coordonnées Incorrect          ||");
+			System.out.println("||      Coordonnées incorrectes :  Hors du tableau              ||");
 			System.out.println("||                                                              ||");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			Scanner sc = new Scanner(System.in);String str = " " + sc.nextLine();
