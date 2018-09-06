@@ -22,7 +22,6 @@ public class Plateau {
 				}
 			}			
 		}
-		//todo
 		Obstacle.lac(plateau, 10, 10);
 		
 	}
