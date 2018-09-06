@@ -18,7 +18,7 @@ public class Besoin {
 		for (int i = 0 ; i<monde.length ; i++) {
 			for (int j = 0 ; j<monde[i].length ; j++) {
 				if (monde[i][j].getIcon()!=null) {
-					if (monde[i][j].getIcon().equals("Ʌ")) { // mine
+					if (monde[i][j].getIcon().equals("Π")) { // mine
 						Partie.money += monde[i][j].getProduction();						
 					}
 					if (monde[i][j].getIcon().equals("≋")) { //Champ

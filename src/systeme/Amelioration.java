@@ -30,7 +30,7 @@ public class Amelioration {
 		for (int i = 0 ; i<monde.length ; i++) {
 			for (int j = 0 ; j<monde[i].length ; j++) {
 				if (monde[i][j]!=null) {	
-					if (monde[i][j].getIcon().equals("Ʌ")) {
+					if (monde[i][j].getIcon().equals("Π")) {
 						monde[i][j].setProduction((monde[i][j].getProduction()+50));						
 					}
 
