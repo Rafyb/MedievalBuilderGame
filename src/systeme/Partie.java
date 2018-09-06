@@ -5,11 +5,12 @@ import entite.Maison;
 import entite.Mine;
 import monde.Plateau;
 import simulation.Besoin;
+import simulation.GestionBudget;
 import simulation.temp;
 
 public class Partie {
 	
-	public static String budget;
+	public static String budget="Defaut";
 
 	/**
 	 * 
@@ -66,6 +67,7 @@ public class Partie {
 		boolean fin = false;
 		String choix = "";
 		while(!end) {
+		    for(int cpt=0;cpt<4;cpt++) {
 			do {
 				fin = false;
 				choix = i.saisiePrincipal(monde);
@@ -77,6 +79,8 @@ public class Partie {
 
 			}while(!fin);
 			Partie.nextTurn(0, 3, 0, monde);
+		    }
+		    GestionBudget.Gestion(monde);
 		}
 		System.out.println("Fin de la partie, vous avez survécu jusqu'au "+date.getJour()+"/"+date.getMois()+"/"+date.getAnnee()+"\n");
 	}
