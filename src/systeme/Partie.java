@@ -116,10 +116,10 @@ public class Partie {
 
 	public static void ShowBasicInfo() {
 		System.out.println("3 mois se sont écoulés, le soleil se lève sur le village de " + nomDuVillage);
-		System.out.println("money:"+money+" food:"+food+" population:"+population+" happyness:"+happyness+" saison:"+temp.saison()+" annee:"+date.getAnnee());
+		System.out.println("Money : "+money+" | Food : "+food+" | Population:"+population+"/"+maxPop + " | Happyness : "+happyness+" Saison : "+temp.saison()+" Année : "+date.getAnnee());
 
 		rapport.estimer(monde.getPlateau());
-		System.out.println("rapport de saison:  production nourriture:"+rapport.rapProdNourriture+" consomation nourriture:"+rapport.rapBesoinNourriture+" production Argent:"+rapport.rapProdArgent);
+		System.out.println("Rapport de saison : Production nourriture : "+rapport.rapProdNourriture+" | Consommation nourriture : "+rapport.rapBesoinNourriture+" | Production Argent : "+rapport.rapProdArgent);
 	}
 
 	public static void reproduction() {
