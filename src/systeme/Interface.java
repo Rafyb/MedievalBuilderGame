@@ -187,8 +187,8 @@ public class Interface {
 		return str;
 	}
 
-	int getCoordo(Plateau p) {
-		this.afficherDivers(p,0);
+	int getCoordo(Plateau p,int i) {
+		this.afficherDivers(p,i);
 
 		Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();
