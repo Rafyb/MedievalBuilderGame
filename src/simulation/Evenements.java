@@ -23,7 +23,7 @@ public class Evenements {
 	    occur=true;
 	}
 	if(occur) {
-	    val = rand.nextInt(4);
+	    val = rand.nextInt(5);
 	    if(val==0) {
 		event_incendie(monde);
 	    }else if(val==1) {
@@ -32,6 +32,8 @@ public class Evenements {
 		event_filon_or(monde);
 	    }else if(val==3) {
 		event_maladie(monde);
+	    }else if(val==4) {
+		event_pillage(monde);
 	    }
 	}
     }
@@ -201,7 +203,7 @@ public class Evenements {
 		Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();
 		ok=true;
-		val=rand.nextInt(Partie.population);
+		val=Partie.population;
 		if(str.equals("1")) {
 		    Partie.happyness-=10;
 		    if(Partie.happyness<0) {
@@ -222,7 +224,7 @@ public class Evenements {
 		    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		    System.out.println("||                          EVENEMENT                           ||");
 		    System.out.println("||             Vous exiler les personnes infectées              ||");
-		    System.out.println("||      -> Vous perdez "+val/2+" victimes                       ||");
+		    System.out.println("||      -> Il y a "+val/2+" victimes                                ||");
 		    System.out.println("||      -> Votre peuple perd 25 de bonheur                      ||");
 		    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		    
@@ -239,7 +241,7 @@ public class Evenements {
 		    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		    System.out.println("||                          EVENEMENT                           ||");
 		    System.out.println("||             L'épidemie ravage votre population               ||");
-		    System.out.println("||      -> Vous perdez "+(2*val/3)+" victimes                          ||");
+		    System.out.println("||      -> Il y a "+(2*val/3)+" victimes                             ||");
 		    System.out.println("||      -> Votre peuple perd 40 de bonheur                      ||");
 		    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		    
@@ -261,6 +263,79 @@ public class Evenements {
 	    System.out.println("||      Une maladie grave a été trouvé dans votre royaume       ||");
 	    System.out.println("||   	Mais vos médecins ont empêché l'epidemie!               ||");
 	    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+	    Scanner sc = new Scanner(System.in);
+	    String str = sc.nextLine();
+	}
+    }
+    
+    public static void event_pillage(Plateau p) {
+	afficherCarte(p);
+	if(!Partie.budget.equals("Militaire")) {
+	    int val=0;
+	    int val2=0;
+	    Random rand = new Random();
+	    boolean ok=false;
+	    while(!ok) {
+
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("||                          EVENEMENT                           ||");
+		System.out.println("|| Des bandits de la région cherchent à piller vos réserves     ||");
+		System.out.println("||      1= Defendre les habitants                               ||");
+		System.out.println("||      2= Defendre les réserves (abandonner les habitant à     ||");
+		System.out.println("||            leurs triste sort)                                ||");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		ok=true;
+		val=rand.nextInt(Partie.food);
+		val2=rand.nextInt(Partie.money);
+		if(str.equals("1")) {
+		    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		    System.out.println("||                          EVENEMENT                           ||");
+		    System.out.println("||             Les Bandits ont pillé vos réserves               ||");
+		    System.out.println("||      -> Vous perdez "+val+" nourriture                          ||");
+		    System.out.println("||      -> Vous perdez "+val2+" or                                 ||");
+		    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		    
+		    Partie.money-=val2;
+		    Partie.food-=val;
+
+		    str = sc.nextLine();
+		}else if(str.equals("2")) {
+		    val=rand.nextInt(Partie.population)/4;
+		    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		    System.out.println("||                          EVENEMENT                           ||");
+		    System.out.println("||         Les Bandits s'attaquent à votre population           ||");
+		    System.out.println("||      -> Il y a "+val+" victimes                                  ||");
+		    System.out.println("||      -> Votre peuple perd 20 de bonheur                      ||");
+		    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		    
+		    Partie.happyness-=20;
+		    if(Partie.happyness<0) {
+			Partie.happyness=0;
+		    }
+		    Partie.population-=val;
+
+		    str = sc.nextLine();
+		    
+		}else {
+		    ok=false;
+		}
+	    }
+
+	}else {
+	    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	    System.out.println("||                          EVENEMENT                           ||");
+	    System.out.println("||      Les bandits s'enfuient devant votre force militaire     ||");
+	    System.out.println("||   	-> bonheur +5                                           ||");
+	    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	    
+	    Partie.happyness+=5;
+	    if(Partie.happyness>100) {
+		Partie.happyness=100;
+	    }
 
 	    Scanner sc = new Scanner(System.in);
 	    String str = sc.nextLine();
