@@ -60,26 +60,34 @@ public class Partie {
 		Interface i = new Interface();
 		monde=new Plateau();
 		end = false;
-		monde.placer_batiment(5, 5, new Champ());
+		/*monde.placer_batiment(5, 5, new Champ());
 		monde.placer_batiment(5, 6, new Maison());
 		monde.placer_batiment(5, 7, new Maison());
 		monde.placer_batiment(5, 8, new Maison());
 		monde.placer_batiment(5, 9, new Maison());
-		monde.placer_batiment(5, 10, new Mine());
+		monde.placer_batiment(5, 10, new Mine());*/
 		boolean fin = false;
 		String choix = "";
 		while(!end) {
 		    for(int cpt=0;cpt<4;cpt++) {
-			do {
-				fin = false;
-				choix = i.saisiePrincipal(monde);
-				if(choix.equals("1")) {i.saisieAchat(monde);};
-				if(choix.equals("2"))i.saisieSuppr(monde);
-				if(choix.equals("3"))i.saisieAmelio(monde);
-				if(choix.equals("4")) fin = true;
+		    	do {
+					fin = false;
+					choix = i.saisiePrincipal(monde);
+					if(choix.equals("1")){
+						i.construire(monde, i.saisieAchat(monde), i.getCoordo(monde), i.getCoordo(monde));
+					}
+					if(choix.equals("2")){
+						i.detruire(monde,i.saisieSuppr(monde), i.getCoordo(monde), i.getCoordo(monde));
+					}
+					if(choix.equals("3")) {
+						
+					}
+					if(choix.equals("4")){
+						fin = true;
+					}
 
 
-			}while(!fin);
+				}while(!fin);
 			Partie.nextTurn(0, 3, 0, monde);
 		    }
 		    GestionBudget.Gestion(monde);

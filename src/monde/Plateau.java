@@ -38,7 +38,7 @@ public class Plateau {
 	public String toString() {
 		String affichage = "";
 
-		affichage +="   0 1 2 3 4 5 6 7 8 9 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z \n";
+		affichage +="   0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 \n";
 		for (int i = 0; i < hauteur ; i++) {
 			if(i>=10) {
 				affichage += i + " ";
@@ -47,9 +47,9 @@ public class Plateau {
 			}
 			for (int j = 0; j < longueur ; j++) {
 				if(plateau[j][i].estConstruit() ) {
-					affichage += ""+plateau[j][i].getIcon() + " ";
+					affichage += ""+plateau[j][i].getIcon() + "  ";
 				}else {
-					affichage += vide + " ";
+					affichage += vide + "  ";
 				}
 			}
 			affichage +="\n";
@@ -62,12 +62,12 @@ public class Plateau {
 	public static void placer_batiment(int x, int y, Parcelle batiment) {
 		if(!plateau[x][y].estConstruit()) {
 			plateau[x][y] = batiment;
-			Partie.money =- batiment.getCoutPlace();
+			Partie.money -= batiment.getCoutPlace();
 		}
 		else if (plateau[x][y].getIcon().equals("^") && batiment.getIcon().equals("M")) {
 			plateau[x][y] = batiment;
 			batiment.setProduction(batiment.getProduction() + 50);
-			Partie.money =- batiment.getCoutPlace();
+			Partie.money -= batiment.getCoutPlace();
 		}
 	}
 	
