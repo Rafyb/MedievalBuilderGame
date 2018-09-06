@@ -45,6 +45,7 @@ public class Partie {
 	public static Tour date= new Tour(1,1,0);
 
 	public static Plateau monde;
+	public static String nomDuVillage;
 
 	/**
 	 * Go to the next turn changing the date
@@ -70,6 +71,7 @@ public class Partie {
 		monde.placer_batiment(5, 10, new Mine());*/
 		boolean fin = false;
 		String choix = "";
+		nomDuVillage = i.saisieNom();
 		while(!end) {
 			for(int cpt=0;cpt<4;cpt++) {
 				do {
@@ -107,6 +109,7 @@ public class Partie {
 	}
 
 	public static void ShowBasicInfo() {
+		System.out.println(nomDuVillage);
 		System.out.println("money:"+money+" food:"+food+" population:"+population+" happyness:"+happyness+" saison:"+temp.saison()+" annee:"+date.getAnnee());
 
 		rapport.estimer(monde.getPlateau());
