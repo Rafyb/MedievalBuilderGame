@@ -1,6 +1,6 @@
 # Rétrospective du sprint 1
 
-Scrum Master : LETORET Jimmy
+Scrum Master : BAUVIN Raphael
 
 ## Ce que l'on a fais durant ce sprint 
 	Continuer interfaces
