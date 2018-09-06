@@ -19,11 +19,11 @@ public class Evenements {
 	occur = false;
 	Random rand = new Random();
 	int val = rand.nextInt(100);
-	if(val<=15) {
+	if(val<=20) {
 	    occur=true;
 	}
 	if(occur) {
-	    val = rand.nextInt(5);
+	    val = rand.nextInt(6);
 	    if(val==0) {
 		event_incendie(monde);
 	    }else if(val==1) {
@@ -34,6 +34,8 @@ public class Evenements {
 		event_maladie(monde);
 	    }else if(val==4) {
 		event_pillage(monde);
+	    }else if(val==5) {
+		event_nuee_sauterelle(monde);
 	    }
 	}
     }
@@ -51,6 +53,38 @@ public class Evenements {
 	Partie.happyness+=val+5;
 	if(Partie.happyness>100) {
 	    Partie.happyness=100;
+	}
+
+	Scanner sc = new Scanner(System.in);
+	String str = sc.nextLine();
+    }
+    
+    public static void event_nuee_sauterelle(Plateau p) {
+	Parcelle[][] monde=p.getPlateau();
+	afficherCarte(p);
+	int val=0;
+	int chance=80;
+	Random rand = new Random();
+	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	System.out.println("||                          EVENEMENT                           ||");
+	System.out.println("||        Des nuées de sauterelles déciments vos champs         ||");
+	System.out.println("||      -> Pertes de certains champs                            ||");
+	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+	for (int i = 0 ; i<monde.length ; i++) {
+	    for (int j = 0 ; j<monde[i].length ; j++) {
+		if (monde[i][j].getIcon()!=null) {
+		    if (monde[i][j].getIcon().equals("≋")) {
+			val=rand.nextInt(100);
+			if(val<=chance) {
+			    monde[i][j]=new Parcelle();
+			    if(chance>=10) {
+				chance=chance-10;
+			    }
+			}
+		    }
+		}
+	    }
 	}
 
 	Scanner sc = new Scanner(System.in);
