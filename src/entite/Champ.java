@@ -5,7 +5,7 @@ public class Champ extends Parcelle {
 	
 	public Champ () {
 		placeMax = 5;
-	    production = 50;
+	    production = 25;
 	    cout = coutPlace;
 		coutPlace += 10;
 		coutSuppr = 30;
