@@ -31,7 +31,7 @@ public class Besoin {
 						Partie.happyness += monde[i][j].getPlaceMax();						
 					}
 					if (monde[i][j].getIcon().equals("⚒")) { //Forgeron
-						Amelioration.active =true;						
+						Amelioration.active =true;		
 					} else {
 						Amelioration.active =false;
 					}

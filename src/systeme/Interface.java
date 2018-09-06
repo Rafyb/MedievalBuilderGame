@@ -66,7 +66,7 @@ public class Interface {
 	/**
 	 * Si le numéro en paramétre est 0 l'affichage sera pour la coordonné X sinon pour la Y 
 	 * 1 affiche un message d'erreur avec un batiment construit, 2 pour des coordonnèes invalide
-	 * 3 pas assez d'argent
+	 * 3 pas assez d'argent 4 Aucun batiment à ameliorer
 	 * @param num
 	 */
 	public void afficherDivers(Plateau p,int num) {
@@ -180,11 +180,22 @@ public class Interface {
 		}
 		return new Parcelle();
 	}
-	public String saisieAmelio (Plateau p ) {
-		this.afficaheAmélioration(p);
+	public void saisieAmelio ( Plateau mondee,Parcelle [][] monde) {
+		this.afficaheAmélioration(mondee);
 		Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();
-		return str;
+		Parcelle pa;
+		if(str.equals("1")) {
+			a.amelioMaison(monde);
+		}
+		if(str.equals("2")) {
+			a.amelioChamp(monde);
+		}
+		if(str.equals("3")) {
+			a.amelioMine(monde);
+		}
+		
+
 	}
 
 	int getCoordo(Plateau p,int i) {
@@ -199,6 +210,7 @@ public class Interface {
 
 		if( x > 35 || x < 0  || y < 0 || y > 19) {
 			afficherDivers(p, 2);
+			
 		}else if(Plateau.plateau[x][y].estConstruit() && !((Plateau.plateau[x][y].getIcon().equals("^") && pa.getIcon().equals("⩄")))) {
 			afficherDivers(p, 1);
 		}else if(Partie.money<pa.getCoutPlace()) {

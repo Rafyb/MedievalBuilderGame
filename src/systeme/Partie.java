@@ -25,11 +25,11 @@ public class Partie {
 	/**
 	 * Current amount of money you have
 	 * */
-	public static int money=1000;
+	public static int money=10000000;
 	/**
 	 * Current amount of food you have
 	 * */
-	public static int food=100;
+	public static int food=100000;
 	/**
 	 * Current amount of people you have in your city
 	 * */
@@ -89,8 +89,7 @@ public class Partie {
 					
 					
 					if(choix.equals("3") && Amelioration.active) {
-						i.afficaheAmélioration(monde);
-
+						i.saisieAmelio(monde, monde.plateau);
 					}
 					if(choix.equals("4")){
 						fin = true;
