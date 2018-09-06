@@ -19,6 +19,15 @@ public class Interface {
 		p.afficherPlateau();
 		Partie.ShowBasicInfo();	}
 
+	public void affichageNommerVillage() {
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("||                                                              ||");
+		System.out.println("||      Quel est le nom de votre village ?                      ||");
+		System.out.println("||                                                              ||");
+		System.out.println("||                                                              ||");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	}
+	
 	public void affichagePrincipale(Plateau p){
 		afficherCarteBesoin(p);
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -124,6 +133,13 @@ public class Interface {
 
 		}
 	}
+	
+	public String saisieNom() {
+		this.affichageNommerVillage();
+		Scanner sc = new Scanner(System.in);
+		return sc.nextLine();
+	}
+	
 	public String saisiePrincipal (Plateau p) {
 		this.affichagePrincipale(p);
 		Scanner sc = new Scanner(System.in);
