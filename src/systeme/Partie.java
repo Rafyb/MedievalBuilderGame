@@ -109,7 +109,9 @@ public class Partie {
 			    GestionBudget.Gestion(monde);
 			}
 		}
-		System.out.println("Fin de la partie, vous avez survécu jusqu'au "+date.getJour()+"/"+date.getMois()+"/"+date.getAnnee()+"\n");
+		monde.afficherPlateau();
+		ShowBasicInfo();
+		System.out.println("\nFin de la partie, vous avez survécu jusqu'au "+date.getJour()+"/"+date.getMois()+"/"+date.getAnnee()+"\n");
 	}
 
 	public static void ShowBasicInfo() {
