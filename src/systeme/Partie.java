@@ -74,6 +74,7 @@ public class Partie {
 		nomDuVillage = i.saisieNom();
 		while(!end) {
 			for(int cpt=0;cpt<4;cpt++) {
+			    if(!end) {
 				do {
 					fin = false;
 					choix = i.saisiePrincipal(monde);
@@ -100,10 +101,13 @@ public class Partie {
 
 
 				}while(!fin);
+			    }
 				Evenements.Event(monde);
 				Partie.nextTurn(0, 3, 0, monde);
 			}
-			GestionBudget.Gestion(monde);
+			if(!end) {
+			    GestionBudget.Gestion(monde);
+			}
 		}
 		System.out.println("Fin de la partie, vous avez survécu jusqu'au "+date.getJour()+"/"+date.getMois()+"/"+date.getAnnee()+"\n");
 	}
