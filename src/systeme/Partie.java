@@ -8,6 +8,8 @@ import simulation.Besoin;
 import simulation.temp;
 
 public class Partie {
+	
+	public static String budget;
 
 	/**
 	 * 
@@ -81,6 +83,7 @@ public class Partie {
 
 	public static void ShowBasicInfo() {
 		System.out.println("money:"+money+" food:"+food+" population:"+population+" happyness:"+happyness+" date:"+date.getMois()+"/"+date.getAnnee()+" saison:"+temp.saison());
+		if (temp.saison().equals("ete")) System.out.println();
 	}
 
 	public static void reproduction() {
