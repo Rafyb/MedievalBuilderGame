@@ -6,6 +6,7 @@ import entite.Mine;
 import entite.Parcelle;
 import monde.Plateau;
 import simulation.Besoin;
+import simulation.Evenements;
 import simulation.GestionBudget;
 import simulation.rapport;
 import simulation.temp;
@@ -25,11 +26,11 @@ public class Partie {
 	/**
 	 * Current amount of money you have
 	 * */
-	public static int money=10000000;
+	public static int money=1000;
 	/**
 	 * Current amount of food you have
 	 * */
-	public static int food=100000;
+	public static int food=100;
 	/**
 	 * Current amount of people you have in your city
 	 * */
@@ -97,6 +98,7 @@ public class Partie {
 
 
 				}while(!fin);
+				Evenements.Event(monde);
 				Partie.nextTurn(0, 3, 0, monde);
 			}
 			GestionBudget.Gestion(monde);
