@@ -13,15 +13,15 @@ public class Obstacle {
 
 	public static void lac(Parcelle [][] monde, int x, int y)
 	{  
-		System.out.println(x+"/"+y);
-		System.out.println("ok");
+		
+		
 		System.out.println(x<35 && x>0 && y<19 && y>0 );
 
 
 		if( x<35 && x>0 && y<19 && y>0 ) {
-			System.out.println("check");
+			
 
-			System.out.println("luck");
+			
 			if(!(monde[x][y].getIcon().equals("~"))) {
 
 				monde[x][y]=new Lac();
