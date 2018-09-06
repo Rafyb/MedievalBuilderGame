@@ -191,7 +191,7 @@ public class Interface {
 
 		if( x > 35 || x < 0  || y < 0 || y > 19) {
 			afficherDivers(p, 2);
-		}else if(Plateau.plateau[x][y].estConstruit()) {
+		}else if(Plateau.plateau[x][y].estConstruit() && !((Plateau.plateau[x][y].getIcon().equals("^") && pa.getIcon().equals("⩄")))) {
 			afficherDivers(p, 1);
 		}else if(Partie.money<pa.getCoutPlace()) {
 			afficherDivers(p, 3);
