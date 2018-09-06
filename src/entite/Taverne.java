@@ -10,7 +10,7 @@ public class Taverne extends Parcelle {
 		coutSuppr = 100;
 		construit = true;
 		placeMax = 0;
-		icon = "T";
+		icon = "☕";
 		production = 15;
 	}
 
