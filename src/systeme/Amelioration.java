@@ -46,7 +46,7 @@ public class Amelioration {
 			for (int j = 0 ; j<monde[i].length ; j++) {
 				if (monde[i][j]!=null) {	
 					if (monde[i][j].getIcon().equals("≋")) {
-						monde[i][j].setProduction((monde[i][j].getProduction()+30));						
+						monde[i][j].setProduction((monde[i][j].getProduction()+25));						
 					}
 
 				}

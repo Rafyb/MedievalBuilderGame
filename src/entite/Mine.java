@@ -5,7 +5,7 @@ public class Mine extends Parcelle {
 	
 	public Mine () {
 		placeMax = 3;
-		production = 200;
+		production = 150;
 		cout = coutPlace;
 		coutPlace += 10;
 		coutSuppr = 30;
