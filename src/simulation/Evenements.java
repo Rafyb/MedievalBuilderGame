@@ -23,7 +23,7 @@ public class Evenements {
 	    occur=true;
 	}
 	if(occur) {
-	    val = rand.nextInt(7);
+	    val = rand.nextInt(6);
 	    if(val==0) {
 		event_incendie(monde);
 	    }else if(val==1) {
@@ -36,8 +36,6 @@ public class Evenements {
 		event_pillage(monde);
 	    }else if(val==5) {
 		event_nuee_sauterelle(monde);
-	    }else if(val==6) {
-		event_marchand(monde);
 	    }
 	}
     }
