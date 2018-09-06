@@ -74,7 +74,7 @@ public class Partie {
 		nomDuVillage = i.saisieNom();
 		while(!end) {
 			for(int cpt=0;cpt<4;cpt++) {
-				while(!fin); {
+				do {
 					fin = false;
 					choix = i.saisiePrincipal(monde);
 					if(choix.equals("1")){
@@ -99,7 +99,7 @@ public class Partie {
 					}
 
 
-				}
+				}while(!fin);
 				Evenements.Event(monde);
 				Partie.nextTurn(0, 3, 0, monde);
 			}
@@ -109,11 +109,11 @@ public class Partie {
 	}
 
 	public static void ShowBasicInfo() {
-		System.out.println("3 mois se sont écoulés, le soleil se leve sur le village de "+nomDuVillage);
-		System.out.println("Money : "+money+" Food : "+food+" Population : "+population+" Happyness : "+happyness+" Saison : "+temp.saison()+" Année : "+date.getAnnee());
+		System.out.println(nomDuVillage);
+		System.out.println("money:"+money+" food:"+food+" population:"+population+" happyness:"+happyness+" saison:"+temp.saison()+" annee:"+date.getAnnee());
 
 		rapport.estimer(monde.getPlateau());
-		System.out.println("Rapport de saison: production nourriture : "+rapport.rapProdNourriture+" consomation nourriture : "+rapport.rapBesoinNourriture+" production Argent : "+rapport.rapProdArgent);
+		System.out.println("rapport de saison:  production nourriture:"+rapport.rapProdNourriture+" consomation nourriture:"+rapport.rapBesoinNourriture+" production Argent:"+rapport.rapProdArgent);
 	}
 
 	public static void reproduction() {

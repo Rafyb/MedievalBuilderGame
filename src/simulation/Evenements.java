@@ -45,6 +45,9 @@ public class Evenements {
 	    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	    
 	    Partie.happyness+=val+5;
+	    if(Partie.happyness>100) {
+		    Partie.happyness=100;
+	    }
 
 	    Scanner sc = new Scanner(System.in);
 	    String str = sc.nextLine();
@@ -105,6 +108,9 @@ public class Evenements {
 	victimes=rand.nextInt(Partie.population/3);
 	Partie.population-=victimes;
 	Partie.happyness-=20;
+	if(Partie.happyness<0) {
+	    Partie.happyness=0;
+	}
 
 	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	System.out.println("||                          EVENEMENT                           ||");
@@ -116,5 +122,57 @@ public class Evenements {
 
 	Scanner sc = new Scanner(System.in);
 	String str = sc.nextLine();
+    }
+    
+    public static void event_filon_or(Plateau p) {
+	afficherCarte(p);
+	int val=0;
+	Random rand = new Random();
+	boolean ok=false;
+	while(!ok) {
+
+	    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	    System.out.println("||                          EVENEMENT                           ||");
+	    System.out.println("||         Vos mineurs ont trouvé un immense filon d'or!        ||");
+	    System.out.println("||      1= Partager avec votre peuple                           ||");
+	    System.out.println("||      2= Garder l'or pour vous                                ||");
+	    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+	    Scanner sc = new Scanner(System.in);
+	    String str = sc.nextLine();
+	    ok=true;
+	    val=rand.nextInt(3000)+600;
+	    if(str.equals("1")) {
+		Partie.happyness+=10;
+		if(Partie.happyness>100) {
+		    Partie.happyness=100;
+		}
+		Partie.money+=val/2;
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		    System.out.println("||                          EVENEMENT                           ||");
+		    System.out.println("||             Vous Partagez l'or avec votre peuple             ||");
+		    System.out.println("||      -> Vous récupérez "+val+" or!                             ||");
+		    System.out.println("||      -> Votre peuple gagne en bonheur                        ||");
+		    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+		    str = sc.nextLine();
+	    }else if(str.equals("2")) {
+		Partie.money+=val;
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		    System.out.println("||                          EVENEMENT                           ||");
+		    System.out.println("||                 Vous garder l'or pour vous!                  ||");
+		    System.out.println("||      -> Vous récupérez "+val+" or!                             ||");
+		    System.out.println("||      -> Votre peuple gagne en bonheur                        ||");
+		    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+		    str = sc.nextLine();
+	    }else{
+		ok=false;
+	    }
+	}
+	
+	Scanner sc = new Scanner(System.in);
+	String str = sc.nextLine();
+	
     }
 }
