@@ -8,10 +8,12 @@ import monde.Plateau;
 import simulation.Besoin;
 import simulation.Evenements;
 import simulation.GestionBudget;
-import simulation.rapport;
+import simulation.Rapport;
 import simulation.temp;
 
 public class Partie {
+	
+	private static String messageFin="";
 
 	public static String budget="Defaut";
 
@@ -74,52 +76,53 @@ public class Partie {
 		nomDuVillage = i.saisieNom();
 		while(!end) {
 			for(int cpt=0;cpt<4;cpt++) {
-			    if(!end) {
-				do {
-					fin = false;
-					choix = i.saisiePrincipal(monde);
-					if(choix.equals("1")){
-						Parcelle par = i.saisieAchat(monde);
-						if (par.equals(new Mine())) {
-							par.setProduction(par.getProduction()+50);
-							i.construire(monde, par, i.getCoordo(monde,0), i.getCoordo(monde,42));
-						}else {
-							i.construire(monde, par , i.getCoordo(monde,0), i.getCoordo(monde,42));
+				if(!end) {
+					do {
+						fin = false;
+						choix = i.saisiePrincipal(monde);
+						if(choix.equals("1")){
+							Parcelle par = i.saisieAchat(monde);
+							if (par.equals(new Mine())) {
+								par.setProduction(par.getProduction()+50);
+								i.construire(monde, par, i.getCoordo(monde,0), i.getCoordo(monde,42));
+							}else {
+								i.construire(monde, par , i.getCoordo(monde,0), i.getCoordo(monde,42));
+							}
 						}
-					}
-					if(choix.equals("2")){
-						i.detruire(monde,i.saisieSuppr(monde),  i.getCoordo(monde,0), i.getCoordo(monde,42));
-					}
-					
-					
-					if(choix.equals("3") && Amelioration.active) {
-						i.saisieAmelio(monde, monde.plateau);
-					}
-					if(choix.equals("4")){
-						fin = true;
-					}
+						if(choix.equals("2")){
+							i.detruire(monde,i.saisieSuppr(monde),  i.getCoordo(monde,0), i.getCoordo(monde,42));
+						}
 
 
-				}while(!fin);
-			    }
+						if(choix.equals("3") && Amelioration.active) {
+							i.saisieAmelio(monde, monde.plateau);
+						}
+						if(choix.equals("4")){
+							fin = true;
+						}
+
+
+					}while(!fin);
+				}
 				Evenements.Event(monde);
 				Partie.nextTurn(0, 3, 0, monde);
 			}
 			if(!end) {
-			    GestionBudget.Gestion(monde);
+				GestionBudget.Gestion(monde);
 			}
 		}
 		monde.afficherPlateau();
 		ShowBasicInfo();
+		System.out.println("\n"+messageFin);
 		System.out.println("\nFin de la partie, vous avez survécu jusqu'au "+date.getJour()+"/"+date.getMois()+"/"+date.getAnnee()+"\n");
 	}
 
 	public static void ShowBasicInfo() {
 		System.out.println("3 mois se sont écoulés, le soleil se lève sur le village de " + nomDuVillage);
-		System.out.println("Money : "+money+" | Food : "+food+" | Population:"+population+"/"+maxPop + " | Happyness : "+happyness+" Saison : "+temp.saison()+" Année : "+date.getAnnee());
+		System.out.println("Money : "+money+" | Food : "+food+" | Population:"+population+"/"+maxPop + " | Happyness : "+happyness+" | Saison : "+temp.saison()+" | Année : "+date.getAnnee());
 
-		rapport.estimer(monde.getPlateau());
-		System.out.println("Rapport de saison : Production nourriture : "+rapport.rapProdNourriture+" | Consommation nourriture : "+rapport.rapBesoinNourriture+" | Production Argent : "+rapport.rapProdArgent);
+		Rapport.estimer(monde.getPlateau());
+		System.out.println("Rapport de saison : Production nourriture : "+Rapport.rapProdNourriture+" | Consommation nourriture : "+Rapport.rapBesoinNourriture+" | Production Argent : "+Rapport.rapProdArgent);
 	}
 
 	public static void reproduction() {
@@ -127,11 +130,18 @@ public class Partie {
 	}
 
 	public static void finDePartie() {
-		if(population <= 0) end = true;
-		if(food <= 0) end = true;
+		if(population <= 0) {
+			end = true; 
+			messageFin=("La totalite de la population a ete decimee, les cadavres serons bientot depeces par les animaux sauvages");
+		}
+		if(food < 0) {
+			end = true;
+			messageFin=("Souffrant d'une inlassable faim, les villageois ont calmer celle-ci de petites roches extraites par les mineurs");
+		}
 		if(happyness <= 0) {
 			end = true;
 			happyness = 0;
+			messageFin=("Des villageois mecontents se sont introduits dans le chateau afin de separer d'une epaisse lamme de metal, la tete du corps du roi");
 		}
 	}
 

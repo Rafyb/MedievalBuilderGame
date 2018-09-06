@@ -67,7 +67,7 @@ public class Plateau {
 			plateau[x][y] = batiment;
 			Partie.money -= batiment.getCoutPlace();
 		}
-		else if (plateau[x][y].getIcon().equals("^") && batiment.getIcon().equals("Ʌ")) {
+		else if (plateau[x][y].getIcon().equals("^") && batiment.getIcon().equals("Π")) {
 			plateau[x][y] = batiment;
 			batiment.setProduction(batiment.getProduction() + 50);
 			Partie.money -= batiment.getCoutPlace();
