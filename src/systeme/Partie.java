@@ -74,7 +74,7 @@ public class Partie {
 		nomDuVillage = i.saisieNom();
 		while(!end) {
 			for(int cpt=0;cpt<4;cpt++) {
-				do {
+				while(!fin); {
 					fin = false;
 					choix = i.saisiePrincipal(monde);
 					if(choix.equals("1")){
@@ -99,7 +99,7 @@ public class Partie {
 					}
 
 
-				}while(!fin);
+				}
 				Evenements.Event(monde);
 				Partie.nextTurn(0, 3, 0, monde);
 			}
