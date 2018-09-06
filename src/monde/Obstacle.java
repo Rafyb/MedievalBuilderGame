@@ -6,7 +6,7 @@ import entite.Lac;
 import entite.Parcelle;
 import systeme.Partie;
 
-public class obstacle {
+public class Obstacle {
 
 	public static double chance = 20;
 	private static Random rand=new Random();

@@ -23,7 +23,7 @@ public class Plateau {
 			}			
 		}
 		//todo
-		obstacle.lac(plateau, 10, 10);
+		Obstacle.lac(plateau, 10, 10);
 		
 	}
 	
