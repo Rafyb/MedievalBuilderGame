@@ -6,6 +6,7 @@ import entite.Mine;
 import monde.Plateau;
 import simulation.Besoin;
 import simulation.GestionBudget;
+import simulation.rapport;
 import simulation.temp;
 
 public class Partie {
@@ -88,7 +89,9 @@ public class Partie {
 
 	public static void ShowBasicInfo() {
 		System.out.println("money:"+money+" food:"+food+" population:"+population+" happyness:"+happyness+" date:"+date.getMois()+"/"+date.getAnnee()+" saison:"+temp.saison());
-		if (temp.saison().equals("ete")) System.out.println();
+		
+		rapport.estimer(monde.getPlateau());
+		System.out.println("rapport de saison:  production nourriture:"+rapport.rapProdNourriture+" consomation nourriture:"+rapport.rapBesoinNourriture+" production Argent:"+rapport.rapProdArgent);
 	}
 
 	public static void reproduction() {
