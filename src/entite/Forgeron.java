@@ -9,7 +9,7 @@ public class Forgeron extends Parcelle {
 		cout = 800;
 		coutSuppr = 100;
 		construit = true;
-		icon = "⚒";
+		icon = "×";
 	}
 	
 }

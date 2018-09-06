@@ -12,13 +12,13 @@ public class Besoin {
 
 	
 	public static void actualiser (Parcelle monde[][]) {
-	    	Partie.maxPop=0;
+	    	Partie.maxPop=5;
 	    	boolean sswitch = false;
 		//lire les production
 		for (int i = 0 ; i<monde.length ; i++) {
 			for (int j = 0 ; j<monde[i].length ; j++) {
 				if (monde[i][j].getIcon()!=null) {
-					if (monde[i][j].getIcon().equals("⩄")) { // mine
+					if (monde[i][j].getIcon().equals("Ʌ")) { // mine
 						Partie.money += monde[i][j].getProduction();						
 					}
 					if (monde[i][j].getIcon().equals("≋")) { //Champ
@@ -31,7 +31,7 @@ public class Besoin {
 					if (monde[i][j].getIcon().equals("T")) { //Taverne
 						Partie.happyness += monde[i][j].getPlaceMax();						
 					}
-					if (monde[i][j].getIcon().equals("⚒")) { //Forgeron
+					if (monde[i][j].getIcon().equals("×")) { //Forgeron
 
 						Amelioration.active =true;	
 						sswitch = true;
