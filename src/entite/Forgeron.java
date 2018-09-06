@@ -8,7 +8,7 @@ public class Forgeron extends Parcelle {
 		coutPlace += 300;
 		coutSuppr = 100;
 		construit = true;
-		icon = "F";
+		icon = "⚒";
 	}
 	
 	public void Forger() {
