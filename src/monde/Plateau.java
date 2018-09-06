@@ -1,5 +1,7 @@
 package monde;
 
+import java.util.Random;
+
 import entite.Parcelle;
 import systeme.Partie;
 
@@ -39,7 +41,10 @@ public class Plateau {
 				affichage += i + "  ";
 			}
 			for (int j = 0; j < longueur ; j++) {
-				if(plateau[j][i].estConstruit()) {
+				if (randomMoutain()) {
+					affichage += "" + "^" + " ";
+				}
+				else if(plateau[j][i].estConstruit() && !plateau[i][j].getIcon().equals("^")) {
 					affichage += ""+plateau[j][i].getIcon() + " ";
 				}else {
 					affichage += vide + " ";
@@ -57,7 +62,7 @@ public class Plateau {
 			plateau[x][y] = batiment;
 			Partie.money =- batiment.getCoutPlace();
 		}
-		else if (!plateau[x][y].estConstruit() && plateau[x][y].getIcon().equals("^") && batiment.getIcon().equals("M")) {
+		else if (plateau[x][y].getIcon().equals("^") && batiment.getIcon().equals("M")) {
 			plateau[x][y] = batiment;
 			batiment.setProduction(batiment.getProduction() + 50);
 			Partie.money =- batiment.getCoutPlace();
@@ -68,11 +73,16 @@ public class Plateau {
 		if (plateau[x][y].estConstruit()) plateau[x][y] = new Parcelle();
 	}
 
+	public static boolean randomMoutain() {
+		Random random = new Random();
+		int r = random.nextInt(101);
+		if (r > 90) {
+			return true;
+		}
+		return false;
+	}
+	
 	public void afficherPlateau() {
 		System.out.println(this.toString());
 	}
-
-
-
-
 }
