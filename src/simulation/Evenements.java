@@ -23,7 +23,7 @@ public class Evenements {
 	    occur=true;
 	}
 	if(occur) {
-	    val = rand.nextInt(6);
+	    val = rand.nextInt(7);
 	    if(val==0) {
 		event_incendie(monde);
 	    }else if(val==1) {
@@ -36,6 +36,8 @@ public class Evenements {
 		event_pillage(monde);
 	    }else if(val==5) {
 		event_nuee_sauterelle(monde);
+	    }else if(val==6) {
+		event_marchand(monde);
 	    }
 	}
     }
@@ -47,7 +49,7 @@ public class Evenements {
 	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	System.out.println("||                          EVENEMENT                           ||");
 	System.out.println("||        Votre peuple organise une fête du bonheur!            ||");
-	System.out.println("||      -> Bonheur + "+val+"                                       ||");
+	System.out.println("||      -> Bonheur + "+val+"\t                             ||");
 	System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
 	Partie.happyness+=val+5;
@@ -59,6 +61,36 @@ public class Evenements {
 	String str = sc.nextLine();
     }
     
+    public static void event_marchand(Plateau p) {
+	afficherCarte(p);
+	boolean ok=false;
+	String str="";
+	Random rand = new Random();
+	int val=rand.nextInt(700)+300;
+	while(!ok) {
+	    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	    System.out.println("||                          EVENEMENT                           ||");
+	    System.out.println("||        Une caravane marchande passe dans votre ville         ||");
+	    System.out.println("||                     Elle vend des vivres                     ||");
+	    System.out.println("||      1= Acheter "+val+" vivres ("+val+" or) \t        ||");
+	    System.out.println("||      2= Ne rien acheter                                      ||");
+	    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+	    Scanner sc = new Scanner(System.in);
+	    ok=true;
+	    if(str.equals("1")) {
+		Partie.food+=val;
+		Partie.money-=val;
+	    }else if (str.equals("2")){
+
+	    }else {
+		ok=false;
+	    }
+	}
+    }
+
+
+
     public static void event_nuee_sauterelle(Plateau p) {
 	Parcelle[][] monde=p.getPlateau();
 	afficherCarte(p);

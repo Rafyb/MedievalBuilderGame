@@ -215,12 +215,13 @@ public class Interface {
 	}
 
 	int getCoordo(Plateau p,int i) {
+
 		this.afficherDivers(p,i);
 		boolean boo = true;
 		String str = "";
-			Scanner sc = new Scanner(System.in);
-			str = "" + sc.nextInt();
-			
+		Scanner sc = new Scanner(System.in);
+		str = "" + sc.nextInt();
+
 		return Integer.valueOf(str);
 	}
 
