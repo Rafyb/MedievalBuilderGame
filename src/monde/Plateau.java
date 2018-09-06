@@ -4,10 +4,10 @@ import entite.Parcelle;
 import systeme.Partie;
 
 public class Plateau {
-	final private int longueur = 36;
-	final private int hauteur = 20;
+	final static private int longueur = 36;
+	final static private int hauteur = 20;
 	final private char vide = '.';
-	final public Parcelle [][] plateau = new Parcelle [longueur][hauteur];
+	final static public Parcelle [][] plateau = new Parcelle [longueur][hauteur];
 
 	public Plateau () {
 		for (int i = 0; i < longueur; i++) {
@@ -16,11 +16,15 @@ public class Plateau {
 			}
 		}
 	}
-
-	public int getLongueur() {
+	
+	public static Parcelle [][] getPlateau(){
+		return plateau;
+	}
+	
+	public static int getLongueur() {
 		return longueur;
 	}
-	public int getHauteur() {
+	public static int getHauteur() {
 		return hauteur;
 	}
 
@@ -48,7 +52,7 @@ public class Plateau {
 		return affichage;
 	}
 
-	public void placer_batiment(int x, int y, Parcelle batiment) {
+	public static void placer_batiment(int x, int y, Parcelle batiment) {
 		if(!plateau[x][y].estConstruit() && !(plateau[x][y].getIcon().equals("^"))) {
 			plateau[x][y] = batiment;
 			Partie.money =- batiment.getCoutPlace();
@@ -60,7 +64,7 @@ public class Plateau {
 		}
 	}
 	
-	public void supprimer_batiment(int x, int y) {
+	public static void supprimer_batiment(int x, int y) {
 		if (plateau[x][y].estConstruit()) plateau[x][y] = new Parcelle();
 	}
 

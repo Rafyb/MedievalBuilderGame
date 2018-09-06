@@ -16,17 +16,17 @@ public class Besoin {
 		for (int i = 0 ; i<monde.length ; i++) {
 			for (int j = 0 ; j<monde[i].length ; j++) {
 				if (monde[i][j].getIcon()!=null) {
-					if (monde[i][j].getIcon().equals("M")) {
+					if (monde[i][j].getIcon().equals("⩄")) { // mine
 						Partie.money += monde[i][j].getProduction();						
 					}
-					if (monde[i][j].getIcon().equals("C")) {
-						Partie.food += monde[i][j].getProduction();
+					if (monde[i][j].getIcon().equals("≋")) { //Champ
+						if ( temp.saison().equals("ete") ) Partie.food += monde[i][j].getProduction();
 					}
 					
-					if (monde[i][j].getIcon().equals("H")) {
+					if (monde[i][j].getIcon().equals("⌂")) { // maison
 						Partie.maxPop += monde[i][j].getPlaceMax();						
 					}
-					if (monde[i][j].getIcon().equals("T")) {
+					if (monde[i][j].getIcon().equals("T")) { //Taverne
 						Partie.happyness += monde[i][j].getPlaceMax();						
 					}
 				}

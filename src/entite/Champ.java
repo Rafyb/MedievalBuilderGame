@@ -10,6 +10,6 @@ public class Champ extends Parcelle {
 		coutPlace += 10;
 		coutSuppr = 30;
 		construit = true;
-		icon = "C";
+		icon = "≋";
 	}
 }
