@@ -5,6 +5,7 @@ import entite.Maison;
 import entite.Mine;
 import monde.Plateau;
 import simulation.Besoin;
+import simulation.temp;
 
 public class Partie {
 
@@ -73,13 +74,13 @@ public class Partie {
 
 
 			}while(!fin);
-			Partie.nextTurn(0, 0, 1, monde);
+			Partie.nextTurn(0, 3, 0, monde);
 		}
 		System.out.println("Fin de la partie, vous avez survécu jusqu'au "+date.getJour()+"/"+date.getMois()+"/"+date.getAnnee()+"\n");
 	}
 
 	public static void ShowBasicInfo() {
-		System.out.println("money:"+money+" food:"+food+" population:"+population+" happyness:"+happyness);
+		System.out.println("money:"+money+" food:"+food+" population:"+population+" happyness:"+happyness+" date:"+date.getMois()+"/"+date.getAnnee()+" saison:"+temp.saison());
 	}
 
 	public static void reproduction() {
