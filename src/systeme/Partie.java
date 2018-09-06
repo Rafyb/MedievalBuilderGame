@@ -115,7 +115,7 @@ public class Partie {
 	}
 
 	public static void ShowBasicInfo() {
-		System.out.println(nomDuVillage);
+		System.out.println("3 mois se sont écoulés, le soleil se lève sur le village de " + nomDuVillage);
 		System.out.println("money:"+money+" food:"+food+" population:"+population+" happyness:"+happyness+" saison:"+temp.saison()+" annee:"+date.getAnnee());
 
 		rapport.estimer(monde.getPlateau());
