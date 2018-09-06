@@ -8,7 +8,7 @@ import monde.Plateau;
 import simulation.Besoin;
 import simulation.Evenements;
 import simulation.GestionBudget;
-import simulation.rapport;
+import simulation.Rapport;
 import simulation.temp;
 
 public class Partie {
@@ -121,8 +121,8 @@ public class Partie {
 		System.out.println("3 mois se sont écoulés, le soleil se lève sur le village de " + nomDuVillage);
 		System.out.println("Money : "+money+" | Food : "+food+" | Population:"+population+"/"+maxPop + " | Happyness : "+happyness+" | Saison : "+temp.saison()+" | Année : "+date.getAnnee());
 
-		rapport.estimer(monde.getPlateau());
-		System.out.println("Rapport de saison : Production nourriture : "+rapport.rapProdNourriture+" | Consommation nourriture : "+rapport.rapBesoinNourriture+" | Production Argent : "+rapport.rapProdArgent);
+		Rapport.estimer(monde.getPlateau());
+		System.out.println("Rapport de saison : Production nourriture : "+Rapport.rapProdNourriture+" | Consommation nourriture : "+Rapport.rapBesoinNourriture+" | Production Argent : "+Rapport.rapProdArgent);
 	}
 
 	public static void reproduction() {
