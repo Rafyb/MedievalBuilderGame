@@ -35,7 +35,8 @@ public class Besoin {
 
 						Amelioration.active =true;	
 						sswitch = true;
-					} else if(!sswitch) {
+					} 
+					if(!sswitch) {
 						Amelioration.active =false;
 					}
 				}

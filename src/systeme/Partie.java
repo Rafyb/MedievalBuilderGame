@@ -6,6 +6,7 @@ import entite.Mine;
 import entite.Parcelle;
 import monde.Plateau;
 import simulation.Besoin;
+import simulation.Evenements;
 import simulation.GestionBudget;
 import simulation.rapport;
 import simulation.temp;
@@ -25,11 +26,11 @@ public class Partie {
 	/**
 	 * Current amount of money you have
 	 * */
-	public static int money=10000000;
+	public static int money=1000;
 	/**
 	 * Current amount of food you have
 	 * */
-	public static int food=100000;
+	public static int food=100;
 	/**
 	 * Current amount of people you have in your city
 	 * */
@@ -44,6 +45,7 @@ public class Partie {
 	public static Tour date= new Tour(1,1,0);
 
 	public static Plateau monde;
+	public static String nomDuVillage;
 
 	/**
 	 * Go to the next turn changing the date
@@ -69,9 +71,10 @@ public class Partie {
 		monde.placer_batiment(5, 10, new Mine());*/
 		boolean fin = false;
 		String choix = "";
+		nomDuVillage = i.saisieNom();
 		while(!end) {
 			for(int cpt=0;cpt<4;cpt++) {
-				do {
+				while(!fin); {
 					fin = false;
 					choix = i.saisiePrincipal(monde);
 					if(choix.equals("1")){
@@ -96,7 +99,8 @@ public class Partie {
 					}
 
 
-				}while(!fin);
+				}
+				Evenements.Event(monde);
 				Partie.nextTurn(0, 3, 0, monde);
 			}
 			GestionBudget.Gestion(monde);
@@ -105,10 +109,11 @@ public class Partie {
 	}
 
 	public static void ShowBasicInfo() {
-		System.out.println("money:"+money+" food:"+food+" population:"+population+" happyness:"+happyness+" saison:"+temp.saison()+" annee:"+date.getAnnee());
+		System.out.println("3 mois se sont écoulés, le soleil se leve sur le village de "+nomDuVillage);
+		System.out.println("Money : "+money+" Food : "+food+" Population : "+population+" Happyness : "+happyness+" Saison : "+temp.saison()+" Année : "+date.getAnnee());
 
 		rapport.estimer(monde.getPlateau());
-		System.out.println("rapport de saison:  production nourriture:"+rapport.rapProdNourriture+" consomation nourriture:"+rapport.rapBesoinNourriture+" production Argent:"+rapport.rapProdArgent);
+		System.out.println("Rapport de saison: production nourriture : "+rapport.rapProdNourriture+" consomation nourriture : "+rapport.rapBesoinNourriture+" production Argent : "+rapport.rapProdArgent);
 	}
 
 	public static void reproduction() {

@@ -19,6 +19,15 @@ public class Interface {
 		p.afficherPlateau();
 		Partie.ShowBasicInfo();	}
 
+	public void affichageNommerVillage() {
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+		System.out.println("||                                                              ||");
+		System.out.println("||      Quel est le nom de votre village ?                      ||");
+		System.out.println("||                                                              ||");
+		System.out.println("||                                                              ||");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	}
+	
 	public void affichagePrincipale(Plateau p){
 		afficherCarteBesoin(p);
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -46,9 +55,9 @@ public class Interface {
 
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("||      Quelle type de batiment supprimer ?                     ||");
-		System.out.println("||  1 = Maison ("+m.getCoutSuppr()+" or)        4 = Route("+r.getCoutSuppr()+" or)                   ||");
-		System.out.println("||  2 = Champ ("+c.getCoutSuppr()+" or)       5 = Taverne("+t.getCoutSuppr()+" or)                 ||");
-		System.out.println("||  3 = Mine ("+mm.getCoutSuppr()+" or)        6 = Forgeron("+f.getCoutSuppr()+"or)                 ||");
+		System.out.println("||  1 = Maison (100 or)         4 = Route (100 or)              ||");
+		System.out.println("||  2 = Champ (100 or)      5 = Taverne  (100 or)               ||");
+		System.out.println("||  3 = Mine (100 or)       6 = Forgeron  (100 or)		        ||");
 		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 	}
 	public void afficaheAmélioration(Plateau p){
@@ -124,6 +133,13 @@ public class Interface {
 
 		}
 	}
+	
+	public String saisieNom() {
+		this.affichageNommerVillage();
+		Scanner sc = new Scanner(System.in);
+		return sc.nextLine();
+	}
+	
 	public String saisiePrincipal (Plateau p) {
 		this.affichagePrincipale(p);
 		Scanner sc = new Scanner(System.in);
@@ -231,6 +247,7 @@ public class Interface {
 		}else if(Partie.money<pa.getCoutSuppr()) {
 			afficherDivers(p, 3);
 		}else {
+			Partie.money -= 100;
 			Plateau.supprimer_batiment(x, y);
 		}
 	}
