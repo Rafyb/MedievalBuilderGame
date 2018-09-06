@@ -21,7 +21,7 @@ public class Rapport {
 						rapProdArgent += monde[i][j].getProduction();						
 					}
 					if (monde[i][j].getIcon().equals("≋")) { //Champ
-						if ( !temp.saison().equals("hiver") ) rapProdNourriture += monde[i][j].getProduction();
+						if ( !Temp.saison().equals("hiver") ) rapProdNourriture += monde[i][j].getProduction();
 					}
 					
 				}

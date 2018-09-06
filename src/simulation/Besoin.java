@@ -22,7 +22,7 @@ public class Besoin {
 						Partie.money += monde[i][j].getProduction();						
 					}
 					if (monde[i][j].getIcon().equals("≋")) { //Champ
-						if ( !temp.saison().equals("hiver") ) Partie.food += monde[i][j].getProduction();
+						if ( !Temp.saison().equals("hiver") ) Partie.food += monde[i][j].getProduction();
 					}
 					
 					if (monde[i][j].getIcon().equals("⌂")) { // maison
