@@ -9,6 +9,10 @@ import simulation.Besoin;
 public class Partie {
 
 	/**
+	 * 
+	 */
+	public static boolean end;
+	/**
 	 * the Max population of your city
 	 * */
 	public static int maxPop=0;
@@ -49,6 +53,7 @@ public class Partie {
 	public static void main (String[]args) {
 		Interface i = new Interface();
 		monde=new Plateau();
+		end = false;
 		monde.placer_batiment(5, 5, new Champ());
 		monde.placer_batiment(5, 6, new Maison());
 		monde.placer_batiment(5, 7, new Maison());
@@ -57,7 +62,7 @@ public class Partie {
 		monde.placer_batiment(5, 10, new Mine());
 		boolean fin = false;
 		String choix = "";
-		while(true) {
+		while(!end) {
 			do {
 				fin = false;
 				choix = i.saisiePrincipal(monde);
@@ -70,6 +75,7 @@ public class Partie {
 			}while(!fin);
 			Partie.nextTurn(0, 0, 1, monde);
 		}
+		System.out.println("Fin de la partie, vous avez survécu jusqu'au "+date.getJour()+"/"+date.getMois()+"/"+date.getAnnee()+"\n");
 	}
 
 	public static void ShowBasicInfo() {
@@ -78,6 +84,15 @@ public class Partie {
 
 	public static void reproduction() {
 		population*=1.2;
+	}
+	
+	public static void finDePartie() {
+		if(population <= 0) end = true;
+		if(food <= 0) end = true;
+		if(happyness <= 0) {
+			end = true;
+			happyness = 0;
+		}
 	}
 
 
