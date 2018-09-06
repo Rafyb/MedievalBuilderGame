@@ -14,7 +14,7 @@ public class Amelioration {
 		for (int i = 0 ; i<monde.length ; i++) {
 			for (int j = 0 ; j<monde[i].length ; j++) {
 				if (monde[i][j]!=null) {	
-					if (monde[i][j].getIcon().equals("H")) {
+					if (monde[i][j].getIcon().equals("⌂")) {
 						monde[i][j].setPlaceMax(monde[i][j].getPlaceMax()+5);				
 					}
 
@@ -29,7 +29,7 @@ public class Amelioration {
 		for (int i = 0 ; i<monde.length ; i++) {
 			for (int j = 0 ; j<monde[i].length ; j++) {
 				if (monde[i][j]!=null) {	
-					if (monde[i][j].getIcon().equals("M")) {
+					if (monde[i][j].getIcon().equals("⩄")) {
 						monde[i][j].setProduction((monde[i][j].getProduction()+50));						
 					}
 
@@ -44,7 +44,7 @@ public class Amelioration {
 		for (int i = 0 ; i<monde.length ; i++) {
 			for (int j = 0 ; j<monde[i].length ; j++) {
 				if (monde[i][j]!=null) {	
-					if (monde[i][j].getIcon().equals("C")) {
+					if (monde[i][j].getIcon().equals("≋")) {
 						monde[i][j].setProduction((monde[i][j].getProduction()+30));						
 					}
 
